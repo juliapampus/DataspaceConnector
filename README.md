@@ -20,36 +20,29 @@ The Dataspace Connector is an implementation of an IDS connector component follo
 [IDS Reference Architecture Model](https://www.internationaldataspaces.org/wp-content/uploads/2019/03/IDS-Reference-Architecture-Model-3.0.pdf). 
 It integrates the [IDS Information Model](https://github.com/International-Data-Spaces-Association/InformationModel) 
 and uses the [IDS Connector Framework](https://github.com/FraunhoferISST/IDS-Connector-Framework) 
-for IDS functionalities and message handling. It provides a REST API for loading, updating, and 
-deleting resources with local or remote data enriched by its metadata. The Dataspace Connector 
-supports IDS conform message handling with other IDS connectors and IDS brokers and implements 
-usage control for eight IDS usage policy patterns. 
+for IDS functionalities and message handling. 
+
+The core component in this repository provides a REST API for loading, updating, and deleting 
+resources with local or remote data enriched by its metadata. It supports IDS conform message 
+handling with other IDS connectors and IDS brokers and implements usage control for eight IDS usage 
+policy patterns.
+
+***
+
+<h3 align="center" >
+  <a href="https://juliapampus.github.io/DataspaceConnector/">
+    Manual & Documentation
+  </a>
+</h3>
+
+***
 
 ## Content
-- [Wiki](https://github.com/FraunhoferISST/DataspaceConnector/wiki)   
-    - [Database Configuration](https://github.com/FraunhoferISST/DataspaceConnector/wiki/database-configuration)
-    - [Deployment](https://github.com/FraunhoferISST/DataspaceConnector/wiki/deployment)  
-    - [Examples](https://github.com/FraunhoferISST/DataspaceConnector/wiki/examples)
-    - [Frequently Asked Questions](https://github.com/FraunhoferISST/DataspaceConnector/wiki/faq)   
-    - [Getting started](https://github.com/FraunhoferISST/DataspaceConnector/wiki/getting-started)  
-    - [IDS Communication Guide](https://github.com/FraunhoferISST/DataspaceConnector/wiki/ids-communication-guide)
-    - [IDS Connector Architecture](https://github.com/FraunhoferISST/DataspaceConnector/wiki/ids-connector-architecture)
-    - [Kubernetes](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Kubernetes)
-    - [Logging](https://github.com/FraunhoferISST/DataspaceConnector/wiki/logging)
-    - [Parametrized Backend Calls](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Parametrized-Backend-Calls) 
-    - [Roadmap](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap)
-    - [Software Documentation](https://github.com/FraunhoferISST/DataspaceConnector/wiki/software-documentation)
-    - [Software Tests](https://github.com/FraunhoferISST/DataspaceConnector/wiki/software-tests)
-    - [Usage Control](https://github.com/FraunhoferISST/DataspaceConnector/wiki/usage-control)
-    - [Using Camel](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Using-Camel)
 - [Quick Start](#quick-start)
 - [IDS Components](#ids-components)
 - [Contributing](#contributing)
 - [Developers](#developers)
 - [License](#license)
-
-A project overview and short descriptions of each wiki section are presented 
-[here](https://github.com/FraunhoferISST/DataspaceConnector/wiki).
 
 ## Quick Start
 
@@ -61,15 +54,10 @@ If you want to build and run locally, ensure that at least Java 11 is installed.
 4.  If everything worked fine, the connector is available at https://localhost:8080/. The API can 
 be accessed at https://localhost:8080/admin/api.
 
-For more details, see [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/development).
-If you do not want to deploy the application yourself, have a look at 
-[how to use the test setups](https://github.com/FraunhoferISST/DataspaceConnector/wiki/getting-started).
+[comment]: <> (For more details, see [here]&#40;https://international-data-spaces-association.github.io/DataspaceConnector/&#41;.)
+For more details, see [here](https://juliapampus.github.io/DataspaceConnector/).
 
 ## IDS Components
-
-The [ConfigManager](https://github.com/FraunhoferISST/IDS-ConfigurationManager) and its 
-[GUI](https://github.com/fkie/ids-configmanager-ui) aim to facilitate the configuration of the 
-Dataspace Connector and further IDS connector implementations. Both projects are also open source.
 
 | Library/ Component | License | Owner | Contact |
 | ------- | ------- | ----- | ------- |
@@ -78,6 +66,19 @@ Dataspace Connector and further IDS connector implementations. Both projects are
 | [IDS Framework](https://github.com/FraunhoferISST/IDS-Connector-Framework) | Apache 2.0 | Fraunhofer ISST | [Tim Berthold](mailto:tim.berthold@isst.fraunhofer.de) |
 | [IDS Broker](https://broker.ids.isst.fraunhofer.de/) | open core | Fraunhofer IAIS | [Matthias Böckmann](mailto:matthias.boeckmann@iais.fraunhofer.de) |
 | [DAPS](https://daps.aisec.fraunhofer.de/) | not open source | Fraunhofer AISEC | [Gerd Brost](mailto:gerd.brost@aisec.fraunhofer.de) |
+
+The [ConfigManager](https://github.com/FraunhoferISST/IDS-ConfigurationManager) and its 
+[GUI](https://github.com/fkie/ids-configmanager-ui) are a part of the IDS connector's and aim to 
+facilitate the configuration of the Dataspace Connector and further IDS connector implementations. 
+Both projects are also open source.
+
+The table below will document the compatibility of the component's versions.
+
+| DSC Core Version | Configuration Manager | Configuration Manager GUI |
+| --- | --- | --- |
+| v3  |     |     |
+| v4  |     |     |
+| v5  |     |     |
 
 ## Contributing
 
