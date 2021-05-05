@@ -6,7 +6,7 @@ url: "https://juliapampus.github.io"
 
 permalink: pretty
 # Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
-color_scheme: nil
+color_scheme: custom
 
 # Set a path/url to a logo that will be displayed instead of the title
 logo: "/assets/images/dsc_logo.png"
