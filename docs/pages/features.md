@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Getting Started
-nav_order: 3
+title: Features
+nav_order: 2
 description: ""
 permalink: /GettingStarted
 ---

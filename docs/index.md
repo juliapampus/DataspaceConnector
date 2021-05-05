@@ -2,37 +2,50 @@
 layout: default
 title: Home
 nav_order: 1
-description: "The Dataspace Connector is an IDS connector reference implementation following the specifications of the IDS Information Model."
+description: "The Dataspace Connector is an IDS connector reference implementation following the 
+specifications of the IDS Information Model."
 permalink: /
 ---
 
 # Manual and Documentation
+
 {: .fs-9 }
 
-This documentation should help you to become familiar with the Dataspace Connector - to try it out, use it in use cases, or contribute to its development.
-{: .fs-6 .fw-300 }
+This documentation should help you to become familiar with the Dataspace Connector - to try it out,
+integrate it in use cases, or contribute to its development. {: .fs-6 .fw-300 }
 
-[Get started now](#ids-ready){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/International-Data-Spaces-Association/DataspaceConnector){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get started now](pages/getting-started.md){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2
+} [View it on GitHub](https://github.com/International-Data-Spaces-Association/DataspaceConnector){:
+.btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
 
-**Welcome to the Dataspace Connector Wiki!** 
+The Dataspace Connector is an IDS connector that is being developed at Fraunhofer ISST. With the
+help of the Dataspace Connector, existing software can easily be extended by IDS connector
+functionalities in order to integrate them into an IDS data ecosystem. Furthermore, it is possible
+to use the Dataspace Connector as a basis for the development of own software that is to be
+connected to an IDS data ecosystem.
 
-* [Database Configuration](https://github.com/FraunhoferISST/DataspaceConnector/wiki/database-configuration): On this page, you can find some more details on how to replace the built-in database.
-* [Deployment](https://github.com/FraunhoferISST/DataspaceConnector/wiki/deployment): Here, you can find a detailed guide for developing and deploying the software.
-* [Example JSON Strings](https://github.com/FraunhoferISST/DataspaceConnector/wiki/examples): Whether policies or IDS messages, this page shows examples of IDS metadata. 
-* [FAQ](https://github.com/FraunhoferISST/DataspaceConnector/wiki/faq): You have encountered an apparently unsolvable problem? Maybe someone else has already found a solution.
-* [Getting Started](https://github.com/FraunhoferISST/DataspaceConnector/wiki/getting-started): Get an example setup running without diving into the code. 
-* [Hands on IDS Communication](https://github.com/FraunhoferISST/DataspaceConnector/wiki/ids-communication-guide): This page explains how to use the API of the connector.
-* [IDS Connector Architecture](https://github.com/FraunhoferISST/DataspaceConnector/wiki/ids-connector-architecture): Connector information from the reference architecture model at a glance.
-* [Kubernetes](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Kubernetes): Example and description for deploying the Dataspace Connector in Kubernetes
-* [Logging](https://github.com/FraunhoferISST/DataspaceConnector/wiki/logging): Here, you can find a detailed description on how to use built-in logging functionality.
-* [Parametrized Backend Calls](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Parametrized-backend-calls): Here, you can find details on how to use dynamic URLs for backends.
-* [Roadmap](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap): Ensuring developments following the same goal, the project's roadmap and each aspect are described in detail.
-* [Software Documentation](https://github.com/FraunhoferISST/DataspaceConnector/wiki/software-documentation): For the developers, some software documentation is provided.
-* [Software Tests](https://github.com/FraunhoferISST/DataspaceConnector/wiki/software-tests): Here, you can find more details about tests.
-* [Usage Control](https://github.com/FraunhoferISST/DataspaceConnector/wiki/usage-control): Usage policies are an important aspect of IDS, further details are explained on this page.
-* [Using Camel](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Using-Camel): Here, you can find instructions for using Camel with the Dataspace Connector.
+The Dataspace Connector uses the recent IDS Information Model version and the IDS Framework of
+Fraunhofer ISST for message handling with other IDS components. For managing datasets by means of
+their metadata as IDS resources, the Dataspace Connector provides a REST API. After an initial
+registration, IDS resources are persisted to an internal or external database of the connector.
+External data sources can be connected via REST endpoints, allowing the Dataspace Connector to act
+as an intermediary between the IDS data ecosystem and the actual data source.
+
+Following the requirements of the International Data Spaces, TLS-encrypted communication with other
+IDS connectors and, for example, communication with an IDS broker are supported in the context of an
+IDS data ecosystem. The Dataspace Connector can simultaneously act as both a data provider and a
+data consumer, and thus both provide data in a data ecosystem and request it from other IDS
+connectors. The Dataspace Connector supports various usage control rules, which are implemented and
+enforced. This allows data in the IDS data ecosystem to be assigned usage control rules and ensures
+data sovereignty throughout the data lifecycle. Furthermore, identity management is supported by the
+integration of an identity provider in the IDS context, such as a DAPS.
+
+The Dataspace Connector is an open source project whose development is being driven in collaboration
+with various research institutes and companies. Its architecture allows the existing implementation
+to be adapted as needed for domain-specific requirements. The deployment of the Dataspace Connector
+can be run in Docker as well as in Kubernetes.
 
 ## IDS-ready
 
@@ -40,16 +53,16 @@ Find the implementation concept [here](files/DSC_implementation_concept_ids_read
 
 <img width="240" height="271" align="right" src="https://www.isst.fraunhofer.de/de/news/pressemitteilungen/2020/Dataspace-Connector/jcr:content/contentPar/pressarticle/pressArticleParsys/textwithasset/imageComponent/image.img.4col.png/1608540266652/ids-ready.png">
 
-"The aim of the Dataspace Connector is to provide companies with an easy and trustworthy entry into 
-the International Data Spaces. There are three levels of certification for the International Data 
-Spaces, an initiative for cross-industry data exchange with over 100 European companies: Base, 
-Trusted and Trusted+. The DSC was deliberately tested for the Base certification level, as this does 
-not require specific hardware such as Trusted Platform Module chips in order to use the connector. 
-This makes it easier to use the DSC on different hardware and in cloud environments with a reasonable 
-sacrifice of hardware security features. 
+"The aim of the Dataspace Connector is to provide companies with an easy and trustworthy entry into
+the International Data Spaces. There are three levels of certification for the International Data
+Spaces, an initiative for cross-industry data exchange with over 100 European companies: Base,
+Trusted and Trusted+. The DSC was deliberately tested for the Base certification level, as this does
+not require specific hardware such as Trusted Platform Module chips in order to use the connector.
+This makes it easier to use the DSC on different hardware and in cloud environments with a
+reasonable sacrifice of hardware security features.
 
-In addition, the Dataspace Connector is the only IDS connector that already supports the enforcement 
-of eight usage condition classes of the International Data Spaces Association and thus exceeds the 
+In addition, the Dataspace Connector is the only IDS connector that already supports the enforcement
+of eight usage condition classes of the International Data Spaces Association and thus exceeds the
 Base certification level."
 
 — [News Release](https://www.isst.fraunhofer.de/de/news/pressemitteilungen/2020/Dataspace-Connector.html)
@@ -58,26 +71,31 @@ Base certification level."
 
 This is a list of currently implemented features, which is continuously updated.
 
-*  Settings for TLS, proxy and Spring Boot basic authentication for backend endpoints
-*  Use valid IDS certificate and request DAT from DAPS
-*  Data resource registration (CRUD metadata) with internal H2 database or an external database
-*  Possibility to add multiple representations (different backend connections) to a resource
-*  Backend data handling internal (CRUD data) with internal H2 database or an external database
-*  Backend data handling external via `http GET` or `https GET` (with basic auth)
-*  IDS message handling with other IDS Connectors (as data provider and data consumer): 
-`DescriptionRequestMessage`, `DescriptionResponseMessage`, `ArtifactRequestMessage`, `ArtifactResponseMessage`, 
-`ContractRequestMessage`, `ContractAgreementMessage`, `ContractRejectionMessage`, `RejectionMessage`
-*  Read IDS response messages: deserialize and save requested data & metadata in internal database
-*  IDS message handling with the IDS Broker (IDS Lab): `ConnectorUpdateMessage`, `ConnectorUnavailableMessage`, 
-`ResourceUpdateMessage`, `ResourceUnavailableMessage`, `QueryMessage`
-* Further supported message types: sending `NotificationMessage` and `LogMessage`, receiving `NotificationMessage`
-*  Usage control with 8 ODRL policy patterns following the IDS policy language specifications: 
-`provide access`, `prohibit access`, `usage during interval`, `n times usage`, `duration usage`, 
-`usage until deletion`, `usage logging`, `usage notification`
+* Settings for TLS, proxy and Spring Boot basic authentication for backend endpoints
+* Use valid IDS certificate and request DAT from DAPS
+* Data resource registration (CRUD metadata) with internal H2 database or an external database
+* Possibility to add multiple representations (different backend connections) to a resource
+* Backend data handling internal (CRUD data) with internal H2 database or an external database
+* Backend data handling external via `http GET` or `https GET` (with basic auth)
+* IDS message handling with other IDS Connectors (as data provider and data consumer):
+  `DescriptionRequestMessage`, `DescriptionResponseMessage`, `ArtifactRequestMessage`
+  , `ArtifactResponseMessage`,
+  `ContractRequestMessage`, `ContractAgreementMessage`, `ContractRejectionMessage`
+  , `RejectionMessage`
+* Read IDS response messages: deserialize and save requested data & metadata in internal database
+* IDS message handling with the IDS Broker (IDS Lab): `ConnectorUpdateMessage`
+  , `ConnectorUnavailableMessage`,
+  `ResourceUpdateMessage`, `ResourceUnavailableMessage`, `QueryMessage`
+* Further supported message types: sending `NotificationMessage` and `LogMessage`,
+  receiving `NotificationMessage`
+* Usage control with 8 ODRL policy patterns following the IDS policy language specifications:
+  `provide access`, `prohibit access`, `usage during interval`, `n times usage`, `duration usage`,
+  `usage until deletion`, `usage logging`, `usage notification`
 
 ### Core Functionality
 
-For roadmap details, see [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#core-functionality).
+For roadmap details,
+see [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#core-functionality).
 
 | Task                       | Responsible | Status  | Description                                  | Note |
 |:---------------------------|:------------|:--------|:---------------------------------------------|:-----|
@@ -88,7 +106,8 @@ For roadmap details, see [here](https://github.com/FraunhoferISST/DataspaceConne
 
 ### IDS Functionality
 
-For roadmap details, see [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#ids-functionality).
+For roadmap details,
+see [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#ids-functionality).
 
 | Task                        | Responsible | Status | Description                                   | Note |
 |:----------------------------|:------------|:-------|:----------------------------------------------|:-----|

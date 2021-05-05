@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="mailto:info@dataspace-connector.de">Contact</a> •
-  <a href="#con">Contribute</a> •
+  <a href="#contributing">Contribute</a> •
   <a href="https://github.com/FraunhoferISST/DataspaceConnector/issues">Issues</a> •
   <a href="#license">License</a> •
   <a href="https://github.com/FraunhoferISST/DataspaceConnector/wiki">Wiki</a>
@@ -23,8 +23,8 @@ and uses the [IDS Connector Framework](https://github.com/FraunhoferISST/IDS-Con
 for IDS functionalities and message handling.
 The core component in this repository provides a REST API for loading, updating, and deleting 
 resources with local or remote data enriched by its metadata. It supports IDS conform message 
-handling with other IDS connectors and IDS brokers and implements usage control for eight IDS usage 
-policy patterns.
+handling with other IDS connectors and components and implements usage control for selected IDS 
+usage policy patterns.
 
 ***
 
@@ -35,13 +35,6 @@ policy patterns.
 </h3>
 
 ***
-
-## Content
-- [Quick Start](#quick-start)
-- [IDS Components](#ids-components)
-- [Contributing](#contributing)
-- [Developers](#developers)
-- [License](#license)
 
 ## Quick Start
 
@@ -58,13 +51,18 @@ For more details, see [here](https://juliapampus.github.io/DataspaceConnector/).
 
 ## IDS Components
 
-| Library/ Component | License | Owner | Contact |
+| Library | License | Owner | Contact |
 | ------- | ------- | ----- | ------- |
 | [IDS Information Model Library](https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/de/fraunhofer/iais/eis/ids/infomodel/) | Apache 2.0 | Fraunhofer IAIS | [Sebastian Bader](mailto:sebastian.bader@iais.fraunhofer.de) |
 | [IDS Information Model Serializer Library](https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/de/fraunhofer/iais/eis/ids/infomodel-serializer/) | Apache 2.0 | Fraunhofer IAIS | [Sebastian Bader](mailto:sebastian.bader@iais.fraunhofer.de) |
 | [IDS Framework](https://github.com/FraunhoferISST/IDS-Connector-Framework) | Apache 2.0 | Fraunhofer ISST | [Tim Berthold](mailto:tim.berthold@isst.fraunhofer.de) |
+| [IDS Messaging Service](https://github.com/FraunhoferISST/IDS-Connector-Framework) | Apache 2.0 | Fraunhofer ISST | [Tim Berthold](mailto:tim.berthold@isst.fraunhofer.de) |
+
+| Component | License | Owner | Contact |
+| ------- | ------- | ----- | ------- |
 | [IDS Broker](https://broker.ids.isst.fraunhofer.de/) | open core | Fraunhofer IAIS | [Matthias Böckmann](mailto:matthias.boeckmann@iais.fraunhofer.de) |
-| [DAPS](https://daps.aisec.fraunhofer.de/) | not open source | Fraunhofer AISEC | [Gerd Brost](mailto:gerd.brost@aisec.fraunhofer.de) |
+| [DAPS](https://daps.aisec.fraunhofer.de/) | open source | Fraunhofer AISEC | [Gerd Brost](mailto:gerd.brost@aisec.fraunhofer.de) |
+| [ParIS]
 
 The [ConfigManager](https://github.com/FraunhoferISST/IDS-ConfigurationManager) and its 
 [GUI](https://github.com/fkie/ids-configmanager-ui) are a part of the IDS connector's and aim to 
@@ -75,8 +73,7 @@ The table below will document the compatibility of the component's versions.
 
 | DSC Core Version | Configuration Manager | Configuration Manager GUI |
 | --- | --- | --- |
-| v3  |     |     |
-| v4  |     |     |
+| v4.x.x  |     |     |
 | v5  |     |     |
 
 ## Contributing
