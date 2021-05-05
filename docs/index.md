@@ -46,7 +46,7 @@ can be run in Docker as well as in Kubernetes.
 
 ## IDS-ready
 
-Find the implementation concept [here](files/DSC_implementation_concept_ids_ready_v4.pdf).
+Find the implementation concept [here](assets/files/DSC_implementation_concept_ids_ready_v4.pdf).
 
 <img width="240" height="271" align="right" src="https://www.isst.fraunhofer.de/de/news/pressemitteilungen/2020/Dataspace-Connector/jcr:content/contentPar/pressarticle/pressArticleParsys/textwithasset/imageComponent/image.img.4col.png/1608540266652/ids-ready.png">
 
