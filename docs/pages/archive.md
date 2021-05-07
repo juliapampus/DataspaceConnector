@@ -5,7 +5,6 @@ nav_order: 10
 description: ""
 permalink: /Archive
 has_children: true
-has_grandchildren: true
 has_toc: true
 ---
 

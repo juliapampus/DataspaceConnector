@@ -5,6 +5,7 @@ nav_order: 2
 description: ""
 permalink: /Archive/v4/Deployment
 parent: Version 4
+grand_parent: Archive
 ---
 
 # IDS Communication Guide
