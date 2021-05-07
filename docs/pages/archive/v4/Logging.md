@@ -7,6 +7,8 @@ permalink: /Archive/Logging
 parent: Archive
 ---
 
+# Logging
+
 The Dataspace Connector provides multiple ways for logging and accessing information.
 
 ## Configuration

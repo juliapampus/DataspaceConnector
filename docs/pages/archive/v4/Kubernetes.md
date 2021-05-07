@@ -7,6 +7,8 @@ permalink: /Archive/Kubernetes
 parent: Archive
 ---
 
+# Kubernetes
+
 ## PostgreSQL
 
 The Dataspace Connector uses an internal H2 database per default. When deploying the Dataspace Connector in a 

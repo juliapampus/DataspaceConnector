@@ -7,6 +7,8 @@ permalink: /Archive/Faq
 parent: Archive
 ---
 
+# Frequently Asked Questions
+
 Please take a look at the [issues](https://github.com/FraunhoferISST/DataspaceConnector/issues) and 
 [discussions](https://github.com/FraunhoferISST/DataspaceConnector/discussions) as well.
 

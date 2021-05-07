@@ -7,6 +7,8 @@ permalink: /Archive/Examples
 parent: Archive
 ---
 
+# Examples
+
 ## Connector
 
 ### Configuration

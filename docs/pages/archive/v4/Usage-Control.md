@@ -7,6 +7,8 @@ permalink: /Archive/UsageControl
 parent: Archive
 ---
 
+# Usage Control
+
 The Dataspace Connector supports usage policies written in an IDS specific policy language following 
 the [ODRL](https://www.w3.org/TR/odrl-model/#policy) standard. Using this, the Dataspace Connector 
 does not support all specified attributes, but the ones to handle eight selected patterns. 
