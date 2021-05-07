@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Deployment
+title: Guide
 nav_order: 2
 description: ""
-permalink: /Archive/v4/Deployment
+permalink: /Archive/v4/Guide
 parent: Version 4
 grand_parent: Archive
 ---
