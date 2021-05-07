@@ -17,5 +17,6 @@ Still using an old version? Feel free to look through the old documentation.
 ---
 
 Since we do not support old versions, our documentation refers only to the latest version of the 
-Dataspace Connector.Nevertheless, the documentation for the old version v4.x.x, that was previously 
-located in the wiki, can be found in this section.
+Dataspace Connector. Nevertheless, the documentation for the old version v4.x.x, that was previously 
+located in the GitHub [wiki](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki), 
+can be found in this section.
