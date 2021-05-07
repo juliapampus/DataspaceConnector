@@ -24,7 +24,7 @@ connector replicas. Therefore, an external database should be used.
 Execute the 3 following commands in the given order in the root directory of the project to start a 
 PostgreSQL database that the Dataspace Connector can use:
 
-```yaml
+```
 kubectl create -f postgres-configmap.yaml
 kubectl apply -f postgres-deployment.yaml
 kubectl expose -f postgres-service.yaml 
@@ -50,7 +50,7 @@ or create a second secret containing the configuration.
 
 To create a secret, put all files it should contain in a directory and execute the following command:
 
-```commandline
+```
 kubectl create secret generic dataspace-connector-certs --from-file=path/to/certs/directory
 ```
 
@@ -86,8 +86,12 @@ deployment file or omit the registry to use a locally built image.
 If you want to use a private registry that requires credentials, first create a docker-registry 
 secret:
 
-```commandline
-kubectl create secret docker-registry registry-credentials --docker-server=[registry-server] --docker-username=[username] --docker-password=[password] --docker-email=[email]
+```
+kubectl create secret docker-registry registry-credentials 
+    --docker-server=[registry-server] 
+    --docker-username=[username] 
+    --docker-password=[password] 
+    --docker-email=[email]
 ```
 
 You can then tell Kubernetes to use this secret when pulling the image by adding the following lines 
@@ -110,7 +114,7 @@ change the mount path of the secret at `volumeMounts`.
 
 To start the deployment, execute the following command:
 
-```yaml
+```
 kubectl apply -f deployment.yaml
 ```
 
@@ -127,13 +131,13 @@ or create an [Ingress](https://kubernetes.io/docs/concepts/services-networking/i
 
 To start the service as type `LoadBalancer` (reachable from inside and outside the cluster), execute
 
-```commandline
+```
 kubectl expose -f service.yaml --type=LoadBalancer
 ```
 
 Afterwards, you can find the IP of the Master node by executing
 
-```commandline
+```
 kubectl cluster-info
 ```
 
