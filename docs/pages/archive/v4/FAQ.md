@@ -1,10 +1,10 @@
 ---
 layout: default
 title: FAQ
-nav_order: 5
+nav_order: 4
 description: ""
-permalink: /Archive/Faq
-parent: Archive
+permalink: /Archive/v4/Faq
+parent: Version 4
 ---
 
 # Frequently Asked Questions

@@ -63,3 +63,16 @@ of eight usage condition classes of the International Data Spaces Association an
 Base certification level."
 
 — [News Release](https://www.isst.fraunhofer.de/de/news/pressemitteilungen/2020/Dataspace-Connector.html)
+
+
+* [Deployment](https://github.com/FraunhoferISST/DataspaceConnector/wiki/deployment): Here, you can find a detailed guide for developing and deploying the software.
+* [Example JSON Strings](https://github.com/FraunhoferISST/DataspaceConnector/wiki/examples): Whether policies or IDS messages, this page shows examples of IDS metadata.
+* [FAQ](https://github.com/FraunhoferISST/DataspaceConnector/wiki/faq): You have encountered an apparently unsolvable problem? Maybe someone else has already found a solution.
+* [Getting Started](https://github.com/FraunhoferISST/DataspaceConnector/wiki/getting-started): Get an example setup running without diving into the code.
+* [Hands on IDS Communication](https://github.com/FraunhoferISST/DataspaceConnector/wiki/ids-communication-guide): This page explains how to use the API of the connector.
+* [IDS Connector Architecture](https://github.com/FraunhoferISST/DataspaceConnector/wiki/ids-connector-architecture): Connector information from the reference architecture model at a glance.
+* [Kubernetes](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Kubernetes): Example and description for deploying the Dataspace Connector in Kubernetes
+* [Parametrized Backend Calls](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Parametrized-backend-calls): Here, you can find details on how to use dynamic URLs for backends.
+* [Roadmap](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap): Ensuring developments following the same goal, the project's roadmap and each aspect are described in detail.
+* [Software Documentation](https://github.com/FraunhoferISST/DataspaceConnector/wiki/software-documentation): For the developers, some software documentation is provided.
+* [Software Tests](https://github.com/FraunhoferISST/DataspaceConnector/wiki/software-tests): Here, you can find more details about tests.

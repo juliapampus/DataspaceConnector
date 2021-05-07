@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Parametrization
-nav_order: 9
+nav_order: 3
 description: ""
-permalink: /Archive/Parametrization
-parent: Archive
+permalink: /Archive/v4/Parametrization
+parent: Version 4
 ---
 
 # Parametrized Backend Calls
