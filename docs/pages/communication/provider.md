@@ -3,6 +3,6 @@ layout: default
 title: Provider
 nav_order: 1
 description: ""
-permalink: /Communication/Provider
+permalink: /CommunicationGuide/Provider
 parent: Communication Guide
 ---

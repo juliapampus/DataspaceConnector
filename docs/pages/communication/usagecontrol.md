@@ -3,7 +3,7 @@ layout: default
 title: Usage Control
 nav_order: 4
 description: ""
-permalink: /Communication/UsageControl
+permalink: /CommunicationGuide/UsageControl
 parent: Communication Guide
 ---
 

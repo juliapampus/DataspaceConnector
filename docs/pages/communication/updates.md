@@ -3,6 +3,6 @@ layout: default
 title: Updates
 nav_order: 3
 description: ""
-permalink: /Communication/Updates
+permalink: /CommunicationGuide/Updates
 parent: Communication Guide
 ---
