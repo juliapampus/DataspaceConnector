@@ -11,7 +11,7 @@ has_toc: true
 # Archive
 {: .fs-9 }
 
-Still using an old version? Feel free to look through the old documentation.
+Still using an old version? Here, you find the old documentation.
 {: .fs-6 .fw-300 }
 
 ---
