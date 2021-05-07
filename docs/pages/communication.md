@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Communication Guide
-nav_order: 5
+nav_order: 6
 description: ""
 permalink: /CommunicationGuide
 ---
