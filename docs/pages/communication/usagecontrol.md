@@ -4,7 +4,7 @@ title: Usage Control
 nav_order: 4
 description: ""
 permalink: /Communication/UsageControl
-parent: Communication
+parent: Communication Guide
 ---
 
 # Usage Control
