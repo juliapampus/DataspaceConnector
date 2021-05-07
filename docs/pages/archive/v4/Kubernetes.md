@@ -1,3 +1,12 @@
+---
+layout: default
+title: Kubernetes
+nav_order: 7
+description: ""
+permalink: /Archive/Kubernetes
+parent: Archive
+---
+
 ## PostgreSQL
 
 The Dataspace Connector uses an internal H2 database per default. When deploying the Dataspace Connector in a 

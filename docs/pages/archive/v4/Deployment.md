@@ -1,3 +1,12 @@
+---
+layout: default
+title: Deployment
+nav_order: 3
+description: ""
+permalink: /Archive/Deployment
+parent: Archive
+---
+
 At first, clone the repository: `git clone https://github.com/FraunhoferISST/DataspaceConnector.git`.
 
 

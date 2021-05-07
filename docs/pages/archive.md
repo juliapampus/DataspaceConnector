@@ -4,12 +4,14 @@ title: Archive
 nav_order: 10
 description: ""
 permalink: /Archive
+has_children: true
+has_toc: true
 ---
 
 # Archive
 {: .fs-9 }
 
-Still using v4.x.x? Feel free to look through the old documentation.
+Still using an old version? Feel free to look through the old documentation.
 {: .fs-6 .fw-300 }
 
 ---

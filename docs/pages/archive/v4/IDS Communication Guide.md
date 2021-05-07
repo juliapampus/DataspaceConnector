@@ -1,3 +1,12 @@
+---
+layout: default
+title: Guide
+nav_order: 6
+description: ""
+permalink: /Archive/Guide
+parent: Archive
+---
+
 To interact with the running application, the provided [endpoints](https://github.com/FraunhoferISST/DataspaceConnector/wiki/development#backend-api) can 
 be used - either automated by an application or manually by interacting with the Swagger UI. In the 
 following, it is explained how to provide data with a connector (from internal and external database) 

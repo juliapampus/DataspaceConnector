@@ -1,3 +1,12 @@
+---
+layout: default
+title: Parametrization
+nav_order: 9
+description: ""
+permalink: /Archive/Parametrization
+parent: Archive
+---
+
 The Dataspace Connector supports the usage of custom headers, query parameters and path variables when fetching data 
 from backend systems. Therefore, it is possible for a data consumer to specify them when sending an 
 ArtifactRequestMessage. 

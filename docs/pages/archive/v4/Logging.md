@@ -1,3 +1,12 @@
+---
+layout: default
+title: Logging
+nav_order: 8
+description: ""
+permalink: /Archive/Logging
+parent: Archive
+---
+
 The Dataspace Connector provides multiple ways for logging and accessing information.
 
 ## Configuration

@@ -1,3 +1,12 @@
+---
+layout: default
+title: FAQ
+nav_order: 5
+description: ""
+permalink: /Archive/Faq
+parent: Archive
+---
+
 Please take a look at the [issues](https://github.com/FraunhoferISST/DataspaceConnector/issues) and 
 [discussions](https://github.com/FraunhoferISST/DataspaceConnector/discussions) as well.
 

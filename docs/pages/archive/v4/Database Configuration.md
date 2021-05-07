@@ -1,3 +1,12 @@
+---
+layout: default
+title: Database
+nav_order: 2
+description: ""
+permalink: /Archive/Database
+parent: Archive
+---
+
 The Dataspace Connector uses Spring Data JPA to set up the database and manage interactions with it. 
 Spring Data JPA supports many well-known relational databases out of the box. Thus, the internal H2 
 can be replaced by e.g. MySQL, PostgreSQL, or Oracle databases with minimal effort.

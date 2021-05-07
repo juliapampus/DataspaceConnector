@@ -1,3 +1,12 @@
+---
+layout: default
+title: Camel
+nav_order: 13
+description: ""
+permalink: /Archive/Camel
+parent: Archive
+---
+
 The communication between the Dataspace Connector and data apps can be achieved by using an integration Framework 
 like Apache Camel. This also provides the possibility to use all kinds of different backends for resources registered 
 in the connector, as no separate implementation has to be made for each possible protocol. To keep the Dataspace 

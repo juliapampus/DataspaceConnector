@@ -1,3 +1,12 @@
+---
+layout: default
+title: Roadmap
+nav_order: 10
+description: ""
+permalink: /Archive/Roadmap
+parent: Archive
+---
+
 Some requirements are derived from the Dataspace Connector's [IDS-ready implementation concept](files/DSC_implementation_concept_ids_ready_v4.pdf "IDS-ready implementation concept").
 
 ## Core-Functionality

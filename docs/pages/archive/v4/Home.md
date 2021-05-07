@@ -1,3 +1,12 @@
+---
+layout: default
+title: Home
+nav_order: 1
+description: ""
+permalink: /Archive/Home
+parent: Archive
+---
+
 **Welcome to the Dataspace Connector Wiki!** 
 
 * [Database Configuration](https://github.com/FraunhoferISST/DataspaceConnector/wiki/database-configuration): On this page, you can find some more details on how to replace the built-in database.
