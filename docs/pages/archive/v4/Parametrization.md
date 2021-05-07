@@ -4,11 +4,13 @@ title: Parametrization
 nav_order: 3
 description: ""
 permalink: /Archive/v4/Parametrization
-parent: Version 4
-grand_parent: Archive
+parent: Archive
 ---
 
 # Parametrized Backend Calls
+{: .fs-9 }
+
+---
 
 The Dataspace Connector supports the usage of custom headers, query parameters and path variables when fetching data 
 from backend systems. Therefore, it is possible for a data consumer to specify them when sending an 

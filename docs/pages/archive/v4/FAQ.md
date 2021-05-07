@@ -4,11 +4,13 @@ title: FAQ
 nav_order: 4
 description: ""
 permalink: /Archive/v4/Faq
-parent: Version 4
-grand_parent: Archive
+parent: Archive
 ---
 
 # Frequently Asked Questions
+{: .fs-9 }
+
+---
 
 Please take a look at the [issues](https://github.com/FraunhoferISST/DataspaceConnector/issues) and 
 [discussions](https://github.com/FraunhoferISST/DataspaceConnector/discussions) as well.
