@@ -18,3 +18,18 @@ integrate it in your use cases, or contribute to its development.
 ---
 
 Connector information from the reference architecture model at a glance.
+
+Einleitung IDS
+
+Übersicht Ecosystem
+
+Was ist ein Connector?
+
+Implementierung am Beispiel des DSC
+Verweis auf Architektur 
+
+## Documents
+
+IDS Infomodel
+IDS RAM
+IDSA Jive

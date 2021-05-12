@@ -79,13 +79,13 @@ example on how to configure the Dataspace Connector deployment.
 
 ##### Configuration
 
-**1. Settings from `application.properties`**: At `env`, all properties presented in or being available 
+Settings from `application.properties`: At `env`, all properties presented in or being available 
 for Spring's `application.properties` can be added or overridden. In this example, the Dataspace 
 Connector uses a PostgreSQL database. If you want to use another database, the corresponding 
 database values can be changed here. You can also set the path to the configuration file in case of 
 supplying an external configuration file or specify the SSL certificate to use.
 
-**2. Image**: The registry and specific images to be used for the deployment can be configured at 
+Image: The registry and specific images to be used for the deployment can be configured at 
 `image`. In the example, a local docker registry running on port 5000 is used. For the example, the
 [local registry](https://docs.docker.com/registry/deploying/) has to be running and contain the 
 Dataspace Connector image. Alternatively, you can change the registry and image name in the 
@@ -108,7 +108,7 @@ imagePullSecrets:
   - name: registry-credentials
 ```
 
-**3. Mounted Directory**: In the example, the secret containing the key- and truststores as well as 
+Mounted Directory: In the example, the secret containing the key- and truststores as well as 
 the configuration file is mounted to the pod at `/connector-certs`. For the connector to find the 
 certificates, the paths in the `config.json` have to be set to `/connector-certs/[certificate name]`. 
 Alternatively, you can change the mount path of the secret at `volumeMounts`.

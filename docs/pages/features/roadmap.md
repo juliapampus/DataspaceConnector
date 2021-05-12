@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Roadmap
-nav_order: 8
+nav_order: 1
 description: ""
-permalink: /Roadmap
+permalink: /Features/Roadmap
+parent: Features
 ---
 
 # Roadmap

@@ -16,4 +16,10 @@ Here, you can find a detailed guide for configuring and deploying the software.
 
 ---
 
+## Configurations
+
+## Build
+
+## Tests
+
 Here, you can find more details about tests.

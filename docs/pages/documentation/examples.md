@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Examples
-nav_order: 1
+nav_order: 6
 description: ""
 permalink: /Documentation/Examples
 parent: Documentation
