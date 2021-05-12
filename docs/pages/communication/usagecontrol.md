@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Usage Control
-nav_order: 4
+nav_order: 3
 description: ""
 permalink: /CommunicationGuide/UsageControl
 parent: Communication Guide
@@ -53,7 +53,8 @@ After the requested data and its metadata are saved in the Connector's database,
 accessed by using the according endpoint. If the user wants to get the data from the data consumer's
 database, the usage policies of the requested data resource are checked for the following patterns:
 `USAGE_DURING_INTERVAL`, `DURATION_USAGE`, `USAGE_UNTIL_DELETION`, `USAGE_LOGGING`,
-`USAGE_NOTIFICATION`, and `N_TIMES_USAGE`. The policy is then implemented using the detected pattern.
+`USAGE_NOTIFICATION`, and `N_TIMES_USAGE`. The policy is then implemented using the detected 
+pattern.
 
 As described above, depending on the rule values, the access permission will be set to true or
 false, and correspondingly, the data is either displayed or not.

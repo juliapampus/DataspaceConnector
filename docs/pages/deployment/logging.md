@@ -19,6 +19,8 @@ The Dataspace Connector provides multiple ways for logging and accessing informa
 
 ## Configuration
 
+We can distinguish between changes at configuration time and some at runtime.
+
 ### Static Configuration
 You may configure logging setting in the `log4j2.xml` at `src/main/resources`. There, you will find 
 the different loggers and the target outputs used within the Dataspace Connector.

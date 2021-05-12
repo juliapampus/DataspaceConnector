@@ -21,7 +21,8 @@ can be replaced by e.g. MySQL, PostgreSQL, or Oracle databases with minimal effo
 
 To use another database for the Connector, follow these steps:
 
-1. Add the dependency for your chosen database to the Connector's `pom.xml` (contains required JDBC driver).
+1. Add the dependency for your chosen database to the Connector's `pom.xml` (contains required JDBC 
+   driver).
 2. Adjust the following parameters in `src/main/resources/application.properties`:
 
     ```
@@ -126,7 +127,8 @@ to connect, also add this to the Connector service in ``docker-compose.yaml``:
 ```
 
 By default, all data in the Postgres container will be lost when running `docker-compose down`. If
-you want to keep your data persisted across restarts, add a persistent volume in the `docker-compose.yaml`:
+you want to keep your data persisted across restarts, add a persistent volume in the 
+`docker-compose.yaml`:
 
 ```yml
  services:

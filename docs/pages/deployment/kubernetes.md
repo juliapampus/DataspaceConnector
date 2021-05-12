@@ -15,6 +15,13 @@ Example and description for deploying the Dataspace Connector in Kubernetes.
 
 ---
 
+In addition to the instructions below, the IDSA community provides a free 
+[GitHub repository](https://github.com/International-Data-Spaces-Association/IDS-Deployment-Examples) 
+with sample deployments. These include not only the Dataspace Connector or a deployment together 
+with ConfigManager and GUI, but also some with other IDS components. The goal is to provide an easy 
+entry into the whole IDS ecosystem. Feel free to have a look at the files or contribute with your 
+own examples.
+
 ## PostgreSQL Deployment
 
 The Dataspace Connector uses an internal H2 database per default. When deploying the Dataspace 
@@ -45,10 +52,13 @@ which can then be mounted to a specified directory of the Dataspace Connector po
 If you want to use an external configuration (`config.json`), you can add it to the secret as well 
 or create a second secret containing the configuration.
 
-> **Note**: The example deployment expects the configuration to be in the same secret as the 
-> certificates.
+---
+**Note**
+The example deployment expects the configuration to be in the same secret as the certificates.
+---
 
-To create a secret, put all files it should contain in a directory and execute the following command:
+To create a secret, put all files it should contain in a directory and execute the following 
+command:
 
 ```
 kubectl create secret generic dataspace-connector-certs --from-file=path/to/certs/directory
@@ -126,7 +136,8 @@ reach it. The `service.yaml` gives an example on how to define a service for the
 Connector. There are different types of services. The service type defaults to `ClusterIP` if not 
 specified, as is the case here, meaning that it can be accessed by other services in the cluster 
 using the service's `name` and `port`. To make the service accessible from outside the cluster,
-either choose a different [service type](https://kubernetes.io/docs/concepts/services-networking/service/) 
+either choose a different 
+[service type](https://kubernetes.io/docs/concepts/services-networking/service/) 
 or create an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/).
 
 To start the service as type `LoadBalancer` (reachable from inside and outside the cluster), execute
@@ -149,8 +160,11 @@ kubectl describe service dataspace-connector
 
 With this IP and port you can now reach the connector using e.g. cURL or an HTTP client.
 
-> **Note**: This example was tested using Minikube. Depending on the Kubernetes distribution you 
-> use, `kubectl` might have to be replaced with another command.
-> * When using OpenShift, replace `kubectl` with `oc`.
-> * When using MicroK8s, replace `kubectl` with `microk8s kubectl`
-> * When using Minikube, replace `kubectl` with `minikube kubectl --`
+---
+**Note**
+This example was tested using Minikube. Depending on the Kubernetes distribution you 
+use, `kubectl` might have to be replaced with another command.
+* When using OpenShift, replace `kubectl` with `oc`.
+* When using MicroK8s, replace `kubectl` with `microk8s kubectl`
+* When using Minikube, replace `kubectl` with `minikube kubectl --`
+---
