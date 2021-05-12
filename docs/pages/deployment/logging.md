@@ -22,6 +22,7 @@ The Dataspace Connector provides multiple ways for logging and accessing informa
 We can distinguish between changes at configuration time and some at runtime.
 
 ### Static Configuration
+
 You may configure logging setting in the `log4j2.xml` at `src/main/resources`. There, you will find 
 the different loggers and the target outputs used within the Dataspace Connector.
 
@@ -35,7 +36,7 @@ named `de.fraunhofer.isst.dataspaceconnector`. The different values of logging l
 </Logger>
 ```
 
-The `AppenderRef` of the Logger controls the output of the log. Add or remove elements of type
+The `AppenderRef` of the logger controls the output of the log. Add or remove elements of type
 `AppenderRef` to add additional outputs or remove existing ones.
 
 The Dataspace Connector offers preconfigured appenders. For logging to console use `ConsoleAppender`
@@ -60,6 +61,7 @@ The Dataspace Connector allows the modification of logging levels at runtime. To
 feature, you will need to locate `application.properties` under `src/main/resources`.
 
 Enable or add the following lines:
+
 ```properties
 management.endpoints.web.exposure.include=loggers
 management.endpoint.loggers.enabled=true
@@ -70,7 +72,8 @@ A list of all available loggers and their current logging level will be exposed 
 
 To change the logging level at runtime, you will need to perform a `POST` request against the 
 logger. Here is an example using curl:
-```
+
+```commandline
 curl -i -k -X POST -H 'Content-Type: application/json' 
     -d '{"configuredLevel": "OFF"}' https://localhost:8080/actuator/loggers/io.dataspaceconnector
 ```
@@ -80,6 +83,7 @@ To get remote access to the log file, find the `application.properties` at `src/
 By default, the Dataspace Connector disables all optional endpoints.
 
 Enable or add the following lines:
+
 ```properties
 management.endpoints.web.exposure.include=logfile
 management.endpoint.logfile.enabled=true
@@ -88,4 +92,5 @@ management.endpoint.logfile.external-file=./log/dataspaceconnector.log
 
 The logfile will be available by performing a pull request on `/actuator/logfile`.
 
-For more information, see [here](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html).
+For more information, see 
+[here](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html).

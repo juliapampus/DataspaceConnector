@@ -25,13 +25,13 @@ To use another database for the Connector, follow these steps:
    driver).
 2. Adjust the following parameters in `src/main/resources/application.properties`:
 
-    ```
-    * spring.datasource.url
-    * spring.datasource.platform
-    * spring.datasource.driver-class-name
-    * spring.datasource.username
-    * spring.datasource.password
-    * spring.jpa.database-platform
+    ```properties
+    spring.datasource.url
+    spring.datasource.platform
+    spring.datasource.driver-class-name
+    spring.datasource.username
+    spring.datasource.password
+    spring.jpa.database-platform
     ```
 
 3. Check what types for large objects your chosen database supports. In some entity classes, some

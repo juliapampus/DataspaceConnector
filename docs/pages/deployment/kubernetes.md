@@ -95,7 +95,8 @@ If you want to use a private registry that requires credentials, first create a 
 secret:
 
 ```commandline
-kubectl create secret docker-registry registry-credentials --docker-server=[registry-server] --docker-username=[username] --docker-password=[password] --docker-email=[email]
+kubectl create secret docker-registry registry-credentials --docker-server=[registry-server] 
+    --docker-username=[username] --docker-password=[password] --docker-email=[email]
 ```
 
 You can then tell Kubernetes to use this secret when pulling the image by adding the following lines 
