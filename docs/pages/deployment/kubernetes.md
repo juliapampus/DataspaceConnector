@@ -31,7 +31,7 @@ connector replicas. Therefore, an external database should be used.
 Execute the 3 following commands in the given order in the root directory of the project to start a 
 PostgreSQL database that the Dataspace Connector can use:
 
-```
+```commandline
 kubectl create -f postgres-configmap.yaml
 kubectl apply -f postgres-deployment.yaml
 kubectl expose -f postgres-service.yaml 
@@ -53,14 +53,16 @@ If you want to use an external configuration (`config.json`), you can add it to 
 or create a second secret containing the configuration.
 
 ---
+
 **Note**
 The example deployment expects the configuration to be in the same secret as the certificates.
+
 ---
 
 To create a secret, put all files it should contain in a directory and execute the following 
 command:
 
-```
+```commandline
 kubectl create secret generic dataspace-connector-certs --from-file=path/to/certs/directory
 ```
 
@@ -77,18 +79,14 @@ example on how to configure the Dataspace Connector deployment.
 
 #### Configuration
 
-##### Settings from `application.properties`
+**1. Settings from `application.properties`**: At `env`, all properties presented in or being available 
+for Spring's `application.properties` can be added or overridden. In this example, the Dataspace 
+Connector uses a PostgreSQL database. If you want to use another database, the corresponding 
+database values can be changed here. You can also set the path to the configuration file in case of 
+supplying an external configuration file or specify the SSL certificate to use.
 
-At `env`, all properties presented in or being available for Spring's `application.properties` can 
-be added or overridden. In the example, the Dataspace Connector uses a PostgreSQL database. If you 
-want to use another database, the corresponding database values can be changed here. You can also 
-set the path to the configuration file in case of supplying an external configuration file or 
-specify the SSL certificate to use.
-
-##### Image
-
-The registry and specific images to be used for the deployment can be configured at `image`. In the 
-example, a local docker registry running on port 5000 is used. For the example, the
+**2. Image**: The registry and specific images to be used for the deployment can be configured at 
+`image`. In the example, a local docker registry running on port 5000 is used. For the example, the
 [local registry](https://docs.docker.com/registry/deploying/) has to be running and contain the 
 Dataspace Connector image. Alternatively, you can change the registry and image name in the 
 deployment file or omit the registry to use a locally built image.
@@ -96,7 +94,7 @@ deployment file or omit the registry to use a locally built image.
 If you want to use a private registry that requires credentials, first create a docker-registry 
 secret:
 
-```
+```commandline
 kubectl create secret docker-registry registry-credentials 
     --docker-server=[registry-server] 
     --docker-username=[username] 
@@ -113,18 +111,16 @@ imagePullSecrets:
   - name: registry-credentials
 ```
 
-##### Mounted directory
-
-In the example, the secret containing the key- and truststores as well as the configuration file is 
-mounted to the pod at `/connector-certs`. For the connector to find the certificates, the paths in 
-the `config.json` have to be set to `/connector-certs/[certificate name]`. Alternatively, you can 
-change the mount path of the secret at `volumeMounts`.
+**3. Mounted Directory**: In the example, the secret containing the key- and truststores as well as 
+the configuration file is mounted to the pod at `/connector-certs`. For the connector to find the 
+certificates, the paths in the `config.json` have to be set to `/connector-certs/[certificate name]`. 
+Alternatively, you can change the mount path of the secret at `volumeMounts`.
 
 #### Starting the deployment
 
 To start the deployment, execute the following command:
 
-```
+```commandline
 kubectl apply -f deployment.yaml
 ```
 
@@ -142,29 +138,31 @@ or create an [Ingress](https://kubernetes.io/docs/concepts/services-networking/i
 
 To start the service as type `LoadBalancer` (reachable from inside and outside the cluster), execute
 
-```
+```commandline
 kubectl expose -f service.yaml --type=LoadBalancer
 ```
 
 Afterwards, you can find the IP of the Master node by executing
 
-```
+```commandline
 kubectl cluster-info
 ```
 
 and the NodePort the service is running on by executing
 
-```
+```commandline
 kubectl describe service dataspace-connector
 ```
 
 With this IP and port you can now reach the connector using e.g. cURL or an HTTP client.
 
 ---
+
 **Note**
 This example was tested using Minikube. Depending on the Kubernetes distribution you 
 use, `kubectl` might have to be replaced with another command.
 * When using OpenShift, replace `kubectl` with `oc`.
 * When using MicroK8s, replace `kubectl` with `microk8s kubectl`
 * When using Minikube, replace `kubectl` with `minikube kubectl --`
+
 ---
