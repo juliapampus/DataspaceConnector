@@ -54,7 +54,7 @@ or create a second secret containing the configuration.
 
 ---
 
-**Note**
+**Note:**
 The example deployment expects the configuration to be in the same secret as the certificates.
 
 ---
@@ -77,7 +77,7 @@ A deployment tells Kubernetes how to set up an application. That includes e.g. t
 environment variables, and resource requirements (memory, CPU). The `deployment.yaml` gives an 
 example on how to configure the Dataspace Connector deployment.
 
-#### Configuration
+##### Configuration
 
 **1. Settings from `application.properties`**: At `env`, all properties presented in or being available 
 for Spring's `application.properties` can be added or overridden. In this example, the Dataspace 
@@ -95,11 +95,7 @@ If you want to use a private registry that requires credentials, first create a 
 secret:
 
 ```commandline
-kubectl create secret docker-registry registry-credentials 
-    --docker-server=[registry-server] 
-    --docker-username=[username] 
-    --docker-password=[password] 
-    --docker-email=[email]
+kubectl create secret docker-registry registry-credentials --docker-server=[registry-server] --docker-username=[username] --docker-password=[password] --docker-email=[email]
 ```
 
 You can then tell Kubernetes to use this secret when pulling the image by adding the following lines 
@@ -116,7 +112,7 @@ the configuration file is mounted to the pod at `/connector-certs`. For the conn
 certificates, the paths in the `config.json` have to be set to `/connector-certs/[certificate name]`. 
 Alternatively, you can change the mount path of the secret at `volumeMounts`.
 
-#### Starting the deployment
+##### Starting the deployment
 
 To start the deployment, execute the following command:
 
@@ -158,11 +154,9 @@ With this IP and port you can now reach the connector using e.g. cURL or an HTTP
 
 ---
 
-**Note**
+**Note:**
 This example was tested using Minikube. Depending on the Kubernetes distribution you 
 use, `kubectl` might have to be replaced with another command.
 * When using OpenShift, replace `kubectl` with `oc`.
 * When using MicroK8s, replace `kubectl` with `microk8s kubectl`
 * When using Minikube, replace `kubectl` with `minikube kubectl --`
-
----
