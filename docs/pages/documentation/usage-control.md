@@ -16,13 +16,11 @@ Usage policies are an important aspect of IDS, further details are explained on 
 ---
 
 "An IDS Contract is implicitly divided to two main sections: the contract specific metadata and the
-`IDS Usage Control Policy` of the contract. 
-
+`IDS Usage Control Policy` of the contract.
 The contract specific information (e.g., date when the contract has been issued or references to the 
 sensitive information about the involved parties) has no effect on the enforcement. However, the
 `IDS Usage Control Policy` is the key motive of organizational and technical Usage Control 
 enforcement.
-
 Furthermore, an `IDS Usage Control Policy` contains several Data Usage Control statements (e.g., 
 permissions, prohibitions and obligations) called `IDS Rules` and is specified in the `IDS Usage 
 Control Language` which is a technology independent language. The technically enforceable rules
@@ -53,10 +51,10 @@ runtime.
 
 ## Policy Patterns 
 
-_Position Paper | Version 3.0 | March 2021_
+_Position Paper, Version 3.0, March 2021_
 
 | Number | Title                                          | Supported |
-|:-------|:-----------------------------------------------|:---------:|
+|:------:|:-----------------------------------------------|:---------:|
 | 1      | Allow the Usage of the Data                    | x         |
 | 2      | Connector-restricted Data Usage                | x         |
 | 3      | Application-restricted Data Usage              | -         |
