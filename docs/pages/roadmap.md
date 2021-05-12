@@ -7,6 +7,12 @@ permalink: /Roadmap
 ---
 
 # Roadmap
+{: .fs-9 }
+
+Ensuring developments following the same goal, the project's roadmap and each aspect are described in detail.
+{: .fs-6 .fw-300 }
+
+---
 
 Some requirements are derived from the Dataspace Connector's [IDS-ready implementation concept](pages/archive/v4/files/DSC_implementation_concept_ids_ready_v4.pdf "IDS-ready implementation concept").
 

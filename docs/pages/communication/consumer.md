@@ -15,6 +15,10 @@ Usage policies are an important aspect of IDS, further details are explained on 
 
 ---
 
+**Parametrized Data Consumption**
+
+Here, you can find details on how to use dynamic URLs for backends.
+
 ---
 **Resource Updates**
 

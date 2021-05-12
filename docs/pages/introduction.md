@@ -16,3 +16,5 @@ integrate it in your use cases, or contribute to its development.
 [Get started now](pages/getting-started.md){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/International-Data-Spaces-Association/DataspaceConnector){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
+
+Connector information from the reference architecture model at a glance.

@@ -8,6 +8,14 @@ parent: Documentation
 ---
 
 # Examples
+{: .fs-9 }
+
+Whether policies or IDS messages, this page shows examples of IDS metadata.
+{: .fs-6 .fw-300 }
+
+---
+
+# Examples
 
 ## Connector
 

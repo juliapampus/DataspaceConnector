@@ -48,7 +48,7 @@ can be run in Docker as well as in Kubernetes.
 
 Find the implementation concept [here](assets/files/DSC_implementation_concept_ids_ready_v4.pdf).
 
-<img width="240" height="271" align="right" src="https://www.isst.fraunhofer.de/de/news/pressemitteilungen/2020/Dataspace-Connector/jcr:content/contentPar/pressarticle/pressArticleParsys/textwithasset/imageComponent/image.img.4col.png/1608540266652/ids-ready.png">
+<img width="240" height="271" align="right" src="https://www.isst.fraunhofer.de/de/news/pressemitteilungen/2020/Dataspace-Connector/jcr:content/fixedContent/pressArticleParsys/textwithasset/imageComponent/image.img.4col.png/1608540266652/ids-ready.png">
 
 "The aim of the Dataspace Connector is to provide companies with an easy and trustworthy entry into
 the International Data Spaces. There are three levels of certification for the International Data
@@ -63,14 +63,3 @@ of eight usage condition classes of the International Data Spaces Association an
 Base certification level."
 
 — [News Release](https://www.isst.fraunhofer.de/de/news/pressemitteilungen/2020/Dataspace-Connector.html)
-
-
-* [Deployment](https://github.com/FraunhoferISST/DataspaceConnector/wiki/deployment): Here, you can find a detailed guide for developing and deploying the software.
-* [Example JSON Strings](https://github.com/FraunhoferISST/DataspaceConnector/wiki/examples): Whether policies or IDS messages, this page shows examples of IDS metadata.
-* [FAQ](https://github.com/FraunhoferISST/DataspaceConnector/wiki/faq): You have encountered an apparently unsolvable problem? Maybe someone else has already found a solution.
-* [Getting Started](https://github.com/FraunhoferISST/DataspaceConnector/wiki/getting-started): Get an example setup running without diving into the code.
-* [Hands on IDS Communication](https://github.com/FraunhoferISST/DataspaceConnector/wiki/ids-communication-guide): This page explains how to use the API of the connector.
-* [IDS Connector Architecture](https://github.com/FraunhoferISST/DataspaceConnector/wiki/ids-connector-architecture): Connector information from the reference architecture model at a glance.
-* [Parametrized Backend Calls](https://github.com/International-Data-Spaces-Association/DataspaceConnector/wiki/Parametrized-backend-calls): Here, you can find details on how to use dynamic URLs for backends.
-* [Roadmap](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap): Ensuring developments following the same goal, the project's roadmap and each aspect are described in detail.
-* [Software Tests](https://github.com/FraunhoferISST/DataspaceConnector/wiki/software-tests): Here, you can find more details about tests.

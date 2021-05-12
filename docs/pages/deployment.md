@@ -7,3 +7,13 @@ permalink: /Deployment
 has_children: true
 has_toc: true
 ---
+
+# Deployment
+{: .fs-9 }
+
+Here, you can find a detailed guide for configuring and deploying the software.
+{: .fs-6 .fw-300 }
+
+---
+
+Here, you can find more details about tests.
