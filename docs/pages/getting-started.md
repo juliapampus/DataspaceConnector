@@ -27,10 +27,12 @@ steps:
     [https://localhost:8080/api](https://localhost:8080/api). The Swagger UI can be found at 
     [https://localhost:8080/api/docs](https://localhost:8080/api/docs).
 
+For a more detailed explanation, see [here](deployment.md).
+
 ## Test Instances
 
 An instance of the Dataspace Connector is currently available in the IDS Lab at
-[https://simpleconnector.ids.isst.fraunhofer.de](https://simpleconnector.ids.isst.fraunhofer.de).
+[https://simpleconnector.ids.isst.fraunhofer.de/](https://simpleconnector.ids.isst.fraunhofer.de/).
 It can only be reached from inside a VPN network. To get your IP address unblocked, please contact
 [us](mailto:info@dataspace-connector.de).
 * The connector self-description is available at [https://simpleconnector.ids.isst.fraunhofer.de/](https://simpleconnector.ids.isst.fraunhofer.de/) (GET).
@@ -71,16 +73,19 @@ Connector currently mainly supports communication with the IDS Broker and DAPS -
 [here](features/overview.md#ids-communication). A working communication with other components is not 
 guaranteed.
 
-The **IDS Metadata Broker** is available at https://broker.ids.isst.fraunhofer.de. It expects IDS 
-multipart messages at https://broker.ids.isst.fraunhofer.de/infrastructure. The GUI can be accessed 
-at https://broker.ids.isst.fraunhofer.de/browse.
+The **Dynamic Attribute Provisioning Service (DAPS)** is available at
+[https://daps.aisec.fraunhofer.de/](https://daps.aisec.fraunhofer.de/).
 
-The **Dynamic Attribute Provisioning Service (DAPS)** is available at 
-https://daps.aisec.fraunhofer.de/. 
+The **IDS Metadata Broker** is available at 
+[https://broker.ids.isst.fraunhofer.de](https://broker.ids.isst.fraunhofer.de). It expects IDS 
+multipart messages at[https://broker.ids.isst.fraunhofer.de/infrastructure](https://broker.ids.isst.fraunhofer.de/infrastructure). 
+The GUI can be accessed at [https://broker.ids.isst.fraunhofer.de/browse](https://broker.ids.isst.fraunhofer.de/browse).
 
-The **Participant Information System (ParIS)** is available at https://paris.ids.isst.fraunhofer.de. 
-It expects IDS multipart messages at https://paris.ids.isst.fraunhofer.de/infrastructure. The GUI 
-can be accessed at https://paris.ids.isst.fraunhofer.de/browse.
+The **Participant Information System (ParIS)** is available at 
+[https://paris.ids.isst.fraunhofer.de](https://paris.ids.isst.fraunhofer.de). 
+It expects IDS multipart messages at 
+[https://paris.ids.isst.fraunhofer.de/infrastructure](https://paris.ids.isst.fraunhofer.de/infrastructure). 
+The GUI can be accessed at [https://paris.ids.isst.fraunhofer.de/browse](https://paris.ids.isst.fraunhofer.de/browse).
 
 ## Test Deployments
 
