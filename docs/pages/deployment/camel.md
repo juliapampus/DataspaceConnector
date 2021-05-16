@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Routing
-nav_order: 4
+nav_order: 6
 description: ""
 permalink: /Deployment/Routing
 parent: Deployment
