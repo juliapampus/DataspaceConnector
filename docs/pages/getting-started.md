@@ -38,8 +38,7 @@ It can only be reached from inside a VPN network. To get your IP address unblock
 * The connector self-description is available at [https://simpleconnector.ids.isst.fraunhofer.de/](https://simpleconnector.ids.isst.fraunhofer.de/) (GET).
 * The **open endpoint for IDS communication** is 
   [https://simpleconnector.ids.isst.fraunhofer.de/api/ids/data](https://simpleconnector.ids.isst.fraunhofer.de/api/ids/data) (POST).
-* The backend API (available at `/api/**`) and its endpoints are only accessible to users with admin 
-  rights.
+* The backend API and its endpoints (`/api/**`) are only accessible to users with admin rights.
 
 ### Connector Communication
 1. When requesting the connector's self-description, the included catalog gives information about
