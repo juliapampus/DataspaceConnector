@@ -73,15 +73,15 @@ Connector currently mainly supports communication with the IDS Broker and DAPS -
 [here](features/overview.md#ids-communication). A working communication with other components is not 
 guaranteed.
 
-The **Dynamic Attribute Provisioning Service (DAPS)** is available at
+* The Dynamic Attribute Provisioning Service (DAPS) is available at
 [https://daps.aisec.fraunhofer.de/](https://daps.aisec.fraunhofer.de/).
-
-The **IDS Metadata Broker** is available at 
+  
+* The IDS Metadata Broker is available at 
 [https://broker.ids.isst.fraunhofer.de](https://broker.ids.isst.fraunhofer.de). It expects IDS 
 multipart messages at[https://broker.ids.isst.fraunhofer.de/infrastructure](https://broker.ids.isst.fraunhofer.de/infrastructure). 
 The GUI can be accessed at [https://broker.ids.isst.fraunhofer.de/browse](https://broker.ids.isst.fraunhofer.de/browse).
-
-The **Participant Information System (ParIS)** is available at 
+  
+* The Participant Information System (ParIS) is available at 
 [https://paris.ids.isst.fraunhofer.de](https://paris.ids.isst.fraunhofer.de). 
 It expects IDS multipart messages at 
 [https://paris.ids.isst.fraunhofer.de/infrastructure](https://paris.ids.isst.fraunhofer.de/infrastructure). 
