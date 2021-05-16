@@ -27,7 +27,7 @@ You may configure logging setting in the `log4j2.xml` at `src/main/resources`. T
 the different loggers and the target outputs used within the Dataspace Connector.
 
 To change the logging level of the Dataspace Connector, modify the attribute `level` of the logger
-named `de.fraunhofer.isst.dataspaceconnector`. The different values of logging level can be found
+named `io.dataspaceconnector`. The different values of logging level can be found
 [here](https://logging.apache.org/log4j/2.x/manual/configuration.html#SystemProperties).
 
 ```xml

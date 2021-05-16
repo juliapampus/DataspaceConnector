@@ -38,7 +38,7 @@ kubectl expose -f postgres-service.yaml
 ```
 
 Now, a PostgreSQL instance is running and accessible by other services in the cluster using the 
-`service name`(*postgres*) and the `service port`(*5432*).
+`service name` (*postgres*) and the `service port` (*5432*).
 
 ## Connector Deployment
 
