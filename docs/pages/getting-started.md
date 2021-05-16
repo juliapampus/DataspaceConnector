@@ -22,18 +22,20 @@ steps:
 1.  Clone the repository: `git clone https://github.com/International-Data-Spaces-Association/DataspaceConnector.git`.
 2.  Execute `cd DataspaceConnector` and `./mvnw clean package`.
 3.  Navigate to `/target` and run `java -jar dataspaceconnector-{VERSION}.jar`.
-4.  If everything worked fine, the connector is available at https://localhost:8080/. The API can
-    be accessed at https://localhost:8080/api. The Swagger UI can be found at https://localhost:8080/api/docs.
+4.  If everything worked fine, the connector is available at 
+    [https://localhost:8080/](https://localhost:8080/). The API can be accessed at 
+    [https://localhost:8080/api](https://localhost:8080/api). The Swagger UI can be found at 
+    [https://localhost:8080/api/docs](https://localhost:8080/api/docs).
 
 ## Test Instances
 
 An instance of the Dataspace Connector is currently available in the IDS Lab at
-https://simpleconnector.ids.isst.fraunhofer.de/.
+[https://simpleconnector.ids.isst.fraunhofer.de](https://simpleconnector.ids.isst.fraunhofer.de).
 It can only be reached from inside a VPN network. To get your IP address unblocked, please contact
 [us](mailto:info@dataspace-connector.de).
-* The connector self-description is available at https://simpleconnector.ids.isst.fraunhofer.de/ (GET).
+* The connector self-description is available at [https://simpleconnector.ids.isst.fraunhofer.de/](https://simpleconnector.ids.isst.fraunhofer.de/) (GET).
 * The **open endpoint for IDS communication** is 
-  https://simpleconnector.ids.isst.fraunhofer.de/api/ids/data (POST).
+  [https://simpleconnector.ids.isst.fraunhofer.de/api/ids/data](https://simpleconnector.ids.isst.fraunhofer.de/api/ids/data) (POST).
 * The backend API (available at `/api/**`) and its endpoints are only accessible to users with admin 
   rights.
 
@@ -50,13 +52,13 @@ It can only be reached from inside a VPN network. To get your IP address unblock
 
 Possible rejection messages:
 * `RejectionMessage` with `RejectionReason.VERSION_NOT_SUPPORTED` if you are not using 
-  Information Model v4.x.x.
+  Infomodel v4.x.x.
 * `RejectionMessage` with `RejectionReason.NOT_AUTHENTICATED` if the requesting connector has no
   valid DAT.
-* `RejectionMessage` with `RejectionReason.BAD_PARAMETERS` if your request contains missing or wrong 
+* `RejectionMessage` with `RejectionReason.BAD_PARAMETERS` if the request contains missing/wrong 
   parameters.
 * `RejectionMessage` with `RejectionReason.INTERNAL_RECIPIENT_ERROR` if message processing failed.
-* `RejectionMessage` with `RejectionReason.NOT_FOUND` if the requested element or artifact could not 
+* `RejectionMessage` with `RejectionReason.NOT_FOUND` if the requested element/artifact could not 
   be found.
 * `RejectionMessage` with `RejectionReason.NOT_AUTHORIZED` if a policy restriction was detected.
 * `ContractRejectionMessage` with `RejectionReason.BAD_PARAMETERS` if the contract request was not 
