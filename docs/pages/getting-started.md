@@ -66,7 +66,7 @@ Possible rejection messages:
 * `ContractRejectionMessage` with `RejectionReason.BAD_PARAMETERS` if the contract request was not 
   accepted.
       
-### Other IDS Components
+### More IDS
 
 Other IDS components also have running instances that can be used for testing. The Dataspace 
 Connector currently mainly supports communication with the IDS Broker and DAPS - as described 

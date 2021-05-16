@@ -15,11 +15,3 @@ Here, you can find a detailed guide on how to configure and deploy the Dataspace
 {: .fs-6 .fw-300 }
 
 ---
-
-## Configurations
-
-## Build
-
-## Tests
-
-Here, you can find more details about tests.
