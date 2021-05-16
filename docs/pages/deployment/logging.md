@@ -17,11 +17,7 @@ Here, you can find a detailed description on how to use built-in logging functio
 
 The Dataspace Connector provides multiple ways for logging and accessing information.
 
-## Configuration
-
-We can distinguish between changes at configuration time and some at runtime.
-
-### Static Configuration
+## Static Configuration
 
 You may configure logging setting in the `log4j2.xml` at `src/main/resources`. There, you will find 
 the different loggers and the target outputs used within the Dataspace Connector.
@@ -56,7 +52,7 @@ To add additional logging outputs or change the logging format consult
 [here](https://logging.apache.org/log4j/2.x/manual/appenders.html) or for more information
 see [here](https://logging.apache.org/log4j/2.x/manual/configuration.html#XML).
 
-### Runtime Configuration
+## Runtime Configuration
 The Dataspace Connector allows the modification of logging levels at runtime. To enable this 
 feature, you will need to locate `application.properties` under `src/main/resources`.
 
