@@ -4,8 +4,6 @@ title: Archive
 nav_order: 10
 description: ""
 permalink: /Archive
-has_children: true
-has_toc: true
 ---
 
 # Archive
