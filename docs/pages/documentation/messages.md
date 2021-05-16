@@ -23,7 +23,7 @@ Connector provides functionality for sending messages as request or response, or
 incoming messages.
 
 | IDS Message Type                    | Outgoing           | Incoming | Description              |
-|:------------------------------------|:------------------:|---------:|:-------------------------|
+|:------------------------------------|:------------------:|:--------:|:-------------------------|
 | ArtifactRequestMessage              | request            | x        | message asking for retrieving a specified artifact  |
 | DescriptionRequestMessage           | request            | x        | message requesting metadata (If no URI is supplied via the ids:requestedElement field, this messages is treated like a self-description request.) |
 | ContractRequestMessage              | request            | x        | message containing a contract offer |

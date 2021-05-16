@@ -42,11 +42,10 @@ If you want to build and run locally, ensure that at least Java 11 is installed.
 
 1.  Clone this repository.
 2.  Execute `cd DataspaceConnector` and `./mvnw clean package`.
-3.  Navigate to `/target` and run `java -jar dataspace-connector-{VERSION}.jar`.
+3.  Navigate to `/target` and run `java -jar dataspaceconnector-{VERSION}.jar`.
 4.  If everything worked fine, the connector is available at https://localhost:8080/. The API can 
-be accessed at https://localhost:8080/admin/api.
+be accessed at https://localhost:8080/admin/api. The Swagger UI can be found at https://localhost:8080/api/docs.
 
-[comment]: <> (For more details, see [here]&#40;https://international-data-spaces-association.github.io/DataspaceConnector/&#41;.)
 For more details, see [here](https://juliapampus.github.io/DataspaceConnector/).
 
 ## Contributing

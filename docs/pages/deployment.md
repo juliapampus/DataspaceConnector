@@ -11,7 +11,7 @@ has_toc: true
 # Deployment
 {: .fs-9 }
 
-Here, you can find a detailed guide for configuring and deploying the Dataspace Connector.
+Here, you can find a detailed guide on how to configure and deploy the Dataspace Connector.
 {: .fs-6 .fw-300 }
 
 ---
