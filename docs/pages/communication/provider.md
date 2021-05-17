@@ -31,6 +31,10 @@ To understand the structure of a resource, please first take a look at the
 Then, for adding resources to the running connector as a data provider, have a look at the following 
 steps.
 
+In the following example, we want to provide the raw data from 
+[here](https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02)
+to a data consumer.
+
 ### Step 1: Register Data Resources
 
 The endpoint `POST /api/offers` can be used for registering a new resource offer at the
@@ -52,29 +56,6 @@ example will be explained in the following.
   "sovereign": "https://openweathermap.org/",
   "endpointDocumentation": "https://example.com",
   "key": "value"
-}
-{
-  "title": "Sample Resource",
-  "description": "This is an example resource containing weather data.",
-  "keywords": [
-    "weather",
-    "data",
-    "sample"
-  ],
-  "owner": "https://openweathermap.org/",
-  "license": "http://opendatacommons.org/licenses/odbl/1.0/",
-  "version": "1.0",
-  "policy": "Example policy",
-  "representations": [
-    {
-      "type": "XML",
-      "byteSize": 101,
-      "name": "Example Representation",
-      "source": {
-        "type": "local"
-      }
-    }
-  ]
 }
 ```
 
@@ -104,9 +85,6 @@ The values `title`, `description`, `keywords`, `publisher`, `sovereign`, `licens
 the data resource and will be used to fill in the IDS Information Model attributes for IDS 
 communication with a connector as data consumer.
 
-A version number is generated automatically and is increased with every entity change. As well as
-the creation and modification date.
-
 ---
 
 **Note**: If you need any further attributes, feel free to just type custom key value pairs. They
@@ -114,16 +92,11 @@ will be stored as `additional` inside the database - as shown in this example.
 
 ---
 
-If the resource was successfully registered, the endpoint will respond with `Http.OK` and the 
-location of the created resource within the response headers. The endpoints `PUT`, `GET`, and 
-`DELETE` `/offers/{id}` provide standard CRUD functions to read, update, and delete the metadata, 
-respectively the data resource - as described [here](../documentation/data-model.md).
-
 See the response of the previously registered resource below.
 
 Response headers:
 
-```http request
+```
 cache-control: no-cache,no-store,max-age=0,must-revalidate 
  connection: keep-alive 
  content-type: application/hal+json 
@@ -138,6 +111,9 @@ cache-control: no-cache,no-store,max-age=0,must-revalidate
  x-frame-options: DENY 
  x-xss-protection: 1; mode=block 
 ```
+
+If the resource was successfully registered, the endpoint will respond with `Http.OK` and the
+location of the created resource within the response headers. 
 
 Response body:
 ```json
@@ -181,8 +157,23 @@ Response body:
 ```
 
 Apart from the metadata, the response body contains links to itself and its parents and children.
+A version number is generated automatically and is increased with every entity change, as well as
+the creation and modification date.
 
+The endpoints `PUT`, `GET`, and
+`DELETE` `/offers/{id}` provide standard CRUD functions to read, update, and delete the metadata,
+respectively the data resource - as described [here](../documentation/data-model.md).
 
+Next to the resource, we need a catalog as a parent for the offer. Use `POST /api/catalogs` to 
+create one. Its location is: [https://localhost:8080/api/catalogs/5ac012e1-ffa5-43b3-af41-9707d2a9137d](https://localhost:8080/api/catalogs/5ac012e1-ffa5-43b3-af41-9707d2a9137d). 
+Then, we need to link both objects to each other via another endpoint. Therefore, we execute a `POST`
+catalog's id extended by `/offers` and the resource's id as part of the list in the request body.
+
+![Example Offer Catalog](../../assets/images/swagger_example_catalogs_offer.png)
+
+```http request
+
+```
 
 As a resource contains the metadata of a raw data string, it can contain several representations,
 e.g. to describe different data types. By default, each resource must have at least one 
@@ -292,26 +283,3 @@ the data provider returns the data. If not, it will respond with a `RejectionRea
 ---
 
 ## Resource Updates
-
-
-
-## Example
-
-```json
-{
-  "title": "ExampleResource",
-  "description": "ExampleResourceDescription",
-  "policy": "...", 
-  "representations": [
-    {
-      "uuid": "8e3a5056-1e46-42e1-a1c3-37aa08b2aedd",
-      "type": "XML",
-      "byteSize": 101,
-      "name": "Example Representation",
-      "source": {
-        "type": "local"
-      }
-    }
-  ]
-}
-```
