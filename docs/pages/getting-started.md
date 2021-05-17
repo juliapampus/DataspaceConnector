@@ -16,6 +16,11 @@ Get an example setup running without diving into the code.
 
 ## Quick Start
 
+We provide Docker images. These can be found [here](https://github.com/orgs/International-Data-Spaces-Association/packages/container/package/dataspace-connector). 
+The GitHub container registry (GHCR) allows to download Docker images without credentials.
+You will find an image for each release tag with the corresponding version. In addition, an image of 
+the master and dev branch is automatically provided as soon as changes are identified.
+
 If you want to build and run locally, ensure that at least Java 11 is installed. Then, follow these 
 steps:
 
@@ -28,6 +33,17 @@ steps:
     [https://localhost:8080/api/docs](https://localhost:8080/api/docs).
 
 For a more detailed explanation, see [here](deployment.md).
+
+
+## Test Deployments
+
+The IDSA community provides a free
+[GitHub repository](https://github.com/International-Data-Spaces-Association/IDS-Deployment-Examples)
+with sample deployments. These include not only the Dataspace Connector or a deployment together
+with ConfigManager and GUI, but also some with other IDS components. The goal is to provide an easy
+entry into the whole IDS ecosystem. Feel free to have a look at the files or contribute with your
+own examples.
+
 
 ## Test Instances
 
@@ -86,12 +102,3 @@ The GUI can be accessed at [https://broker.ids.isst.fraunhofer.de/browse](https:
 It expects IDS multipart messages at 
 [https://paris.ids.isst.fraunhofer.de/infrastructure](https://paris.ids.isst.fraunhofer.de/infrastructure). 
 The GUI can be accessed at [https://paris.ids.isst.fraunhofer.de/browse](https://paris.ids.isst.fraunhofer.de/browse).
-
-## Test Deployments
-
-The IDSA community provides a free
-[GitHub repository](https://github.com/International-Data-Spaces-Association/IDS-Deployment-Examples)
-with sample deployments. These include not only the Dataspace Connector or a deployment together
-with ConfigManager and GUI, but also some with other IDS components. The goal is to provide an easy
-entry into the whole IDS ecosystem. Feel free to have a look at the files or contribute with your
-own examples.

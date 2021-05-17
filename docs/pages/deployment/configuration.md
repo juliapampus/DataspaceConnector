@@ -333,7 +333,7 @@ contract agreement when requesting data access via an `ArtifactRequestMessage`. 
 deactivate the policy negotiation, as data provider or data consumer, use the following endpoints
 or the corresponding line within the `application.properties`.
 
-![Policy Negotiation Settings](assets/images/negotiation_settings.png)
+![Policy Negotiation Settings](../../assets/images/negotiation_settings.png)
 
 Note that the Dataspace Connector is able to received resources with usage policies that follow
 the IDS policy language but not one of the supported patterns. As, by default, the policy check on
@@ -344,4 +344,4 @@ able to ignore unsupported patterns with setting the boolean at the endpoint
 agreements that are technically mapped to IDS usage policies. Therefore, you have to ensure, that 
 your backend applications technically enforce the usage policies instead.
 
-![Unsupported Pattern Settings](assets/images/pattern_settings.png)
+![Unsupported Pattern Settings](../../assets/images/pattern_settings.png)

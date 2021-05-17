@@ -25,7 +25,7 @@ Reference architecture and the use of an IDS Connector is the decentralized data
 enables data integration from different data sources and allows data access exclusively through 
 other IDS Connectors. Thus, a technical implementation of data sovereignty is guaranteed.
 
-![RAM Connector Architecture](assets/images/ram_architecture.png)
+![RAM Connector Architecture](../assets/images/ram_architecture.png)
 
 An IDS Connector is composed of various system services:
 * Execution core container with Message Systems (Message Router/Bus)
