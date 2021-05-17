@@ -15,22 +15,22 @@ See how to consume data with the Dataspace Connector.
 
 ---
 
-First of all, the connector provides an endpoint for requesting its self-description.
-The self-description is returned as JSON-LD string and contains several information about the running
-connector instance. This includes e.g. the title, the maintainer, the IDS Infomodel version, and
+The connector provides an endpoint for requesting its self-description.
+The self-description is returned as JSON-LD and contains several information about the running
+connector instance. This includes e.g. the title, the maintainer, the IDS Informodel version, and
 the resource catalog. At the public endpoint `/`, the resource catalog is not displayed. It can only
-be accessed with admin credentials or by sending an IDS description request message (see
-[here](#step-1-request-a-connectors-self-description)).
+be accessed with admin credentials at `GET /api/connector` or by sending an IDS description request
+message as explained [here](consumer.md#step-1-request-a-connectors-self-description)).
 
-![Selfservice Endpoints](images/api-v1/endpoints-selfservice.png)
+![Selfservice Endpoints](../../assets/images/swagger_connector.png)
 
 ## Step by Step
 
-![Connector Communication Endpoints](images/api-v1/endpoints-connector-communication.png)
-
 For requesting data and metadata as a data consumer, two endpoints are provided. A description
-request is used for requesting the metadata and an artifact request is used for requesting the raw
-data.
+request is used for requesting the metadata and a contract request is used for handling out 
+contract agreements requesting the raw data.
+
+![Connector Communication Endpoints](../../assets/images/swagger_communication_endpoints.png)
 
 > **Important**: For the following guide, note that the `/api/ids/data` endpoint may not be valid
 > for other connector implementations. Check at which endpoint the data provider expects the IDS

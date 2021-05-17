@@ -20,7 +20,7 @@ The self-description is returned as JSON-LD and contains several information abo
 connector instance. This includes e.g. the title, the maintainer, the IDS Informodel version, and
 the resource catalog. At the public endpoint `/`, the resource catalog is not displayed. It can only
 be accessed with admin credentials at `GET /api/connector` or by sending an IDS description request 
-message as explained [here](consumer.md#step-1-request-a-connectors-self-description)).
+message as explained [here](consumer.md#step-1-request-a-connectors-self-description).
 
 ![Selfservice Endpoints](../../assets/images/swagger_connector.png)
 
@@ -37,9 +37,9 @@ to a data consumer.
 
 ### Step 1: Register Data Resources
 
-The endpoint `POST /api/offers` can be used for registering a new resource offer at the
-connector. This can be done by providing some important information as metadata in JSON format. An
-example will be explained in the following. 
+The endpoint `POST /api/offers` can be used for registering a new resource offer at the connector. 
+This can be done by providing information as metadata in JSON format. An example will be explained 
+in the following. 
 
 ```
 curl -X 'POST' \
