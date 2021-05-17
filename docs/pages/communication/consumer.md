@@ -355,10 +355,13 @@ If we change e.g. the `ids:action` from `idsc:USE` to `idsc:MODIFY`, we will rec
 
 ---
 
-**Note**: As the endpoint for contract requests expects a list of resource IDs, artifact IDS, and 
+**Note**: As the endpoint for a contract request expects a list of resource IDs, artifact IDS, and 
 rules, you are able to handle out contract agreements for multiple artifacts at once.
 
 ---
+
+The Dataspace Connector will automatically start sending `DescriptionRequestMessages` and 
+`ArtifactRequestMessages` for the requested elements and save metadata and data to its database.
 
 ### Step 4: Access the Data
 
@@ -379,24 +382,27 @@ is automatically decoded on an API call.
 
 ## Policy Enforcement
 
-After the requested data and its metadata are saved in the Connector's database, it can be
-accessed by using the according endpoint. If the user wants to get the data from the data consumer's
-database, the usage policies of the requested data resource are checked for the following patterns:
+As artifact and contract agreements are linked inside the Dataspace Connector's database, the usage 
+policies of the requested data resource are checked for the following patterns:
 `USAGE_DURING_INTERVAL`, `DURATION_USAGE`, `USAGE_UNTIL_DELETION`, `USAGE_LOGGING`,
 `USAGE_NOTIFICATION`, and `N_TIMES_USAGE`. The policy is then implemented using the detected
 pattern.
 
-As described above, depending on the rule values, the access permission will be set to true or
-false, and correspondingly, the data is either displayed or not.
+As described [here](provider.md#policy-enforcement), depending on the rule values, the access 
+permission will be set to true or false, and correspondingly, the data is either returned or not.
 
-On top of that, the Dataspace Connector performs a periodic policy check. If a duty determining the
-deletion date and time, as in `USAGE_UNTIL_DELETION`, is detected, usage control is executed and
-the data concerned is deleted.
+On top of that, the Dataspace Connector performs a periodic policy check. If a duty within a
+contract agreement determines the deletion date and time, as in `USAGE_UNTIL_DELETION`, is detected, 
+usage control is executed and the concerned data is deleted.
 
 ## Resource Updates
 
+If the Dataspace Connector receives a `ResourceUpdateMessage` for a known requested resource, it 
+automatically sends a `DescriptionRequestMessage` and an `ArtifactRequestMessage` to retrieve the
+latest metadata and data.
 
+## Parametrized Data Request
 
-## Parametrized Data Consumption
-
-Here, you can find details on how to use dynamic URLs for backends.
+If the provider allows to query the data that you want to consume, you are able to make generic 
+`GET` requests on `/api/artifacts/{id}/data/**`. Any request headers, parameters, or path variables
+will be forwarded to the provider and you will only receive a snapshot of the offered data string.
