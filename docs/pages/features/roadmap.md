@@ -25,22 +25,22 @@ This list follows no timeline. Instead, individual tasks can be priority-assigne
 implementation can be freely scheduled and extended, depending on the interests and projects of 
 potential contributors. The rating ranges from 1 (= high priority) to 3 (= low priority).
 
-| Priority | Task                                  | Status      |
-|:--------:|:--------------------------------------|:------------|
-| 2        | Connector Orchestration in Kubernetes | in progress |
-| 2        | Network Support                       |             |
-| 2        | Identity & Access Management          |             |
-| 2        | Software Tests                        | ongoing     |
-| 1        | Software Documentation                | ongoing     |
-| 3        | Connection to Hyperscalers as e.g. AWS|             |
-| 1        | Audit Logging                         |             |
-| 1        | Code Quality Improvements             | done        |
-| 1        | Database Improvement                  | done        |
-| 1        | Exception Handling                    | done        |
-| 1        | Logging                               | done        |
-| 3        | Scalability                           |             |
-| 2        | Data Streaming                        |             |
-| 2        | Asynchronous Message Handling         |             |
+| Priority | Task                                  | Status      | Note        |
+|:--------:|:--------------------------------------|:------------|:------------|
+| 2        | Connector Orchestration in Kubernetes | in progress |    |
+| 2        | Network Support                       |             |    |
+| 2        | Identity & Access Management          |             |    |
+| 2        | Software Tests                        | ongoing     |    |
+| 1        | Software Documentation                | ongoing     |    |
+| 3        | Connection to Hyperscalers as e.g. AWS|             |    |
+| 1        | Audit Logging                         |             |    |
+| 1        | Code Quality Improvements             | done        |    |
+| 1        | Database Improvement                  | done        |    |
+| 1        | Exception Handling                    | done        |    |
+| 1        | Logging                               | done        |    |
+| 3        | Scalability                           |             |    |
+| 2        | Data Streaming                        |             |    |
+| 2        | Asynchronous Message Handling         |             |    |
 
 ## IDS-Functionality
 
@@ -48,7 +48,7 @@ The implementation of the following requirements primarily focuses on IDS develo
 Responsible for this are mainly developers from the Fraunhofer ISST.
 
 | Timeline | Task                                   | Status      | Note        |
-|:--------:|:---------------------------------------|:------------|:------------|
+|:---------|:---------------------------------------|:------------|:------------|
 | Q4/20    | Ids-ready Test                         | done        |    |
 |          | ConfigManager Integration              | done        |    |
 |          | Basic Policy Negotiation               | done        |    |
