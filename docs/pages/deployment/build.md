@@ -75,8 +75,8 @@ tests. The `release` profile shows all warnings and errors. To run a profile, pl
 
 | Plugin | Command | Description |
 |:-------|:--------|:------------|
-| Checkstyle | mvn validate | 
-| Statistics | mvn verify site | With this, project statistics will be generated. |
+| Checkstyle | mvn checkstyle:check | With this, a codestyle check is executed. | 
+| Statistics | mvn verify site | With this, project statistics are generated. |
 | License | mvn license:format | With this, a license header is added to all projects files that are missing one. |
 
 ## Docker
