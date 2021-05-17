@@ -4,8 +4,6 @@ title: Features
 nav_order: 3
 description: ""
 permalink: /Features
-has_children: true
-has_toc: true
 ---
 
 # Features
