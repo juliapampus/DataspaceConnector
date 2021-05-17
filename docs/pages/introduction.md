@@ -25,6 +25,8 @@ Reference architecture and the use of an IDS Connector is the decentralized data
 enables data integration from different data sources and allows data access exclusively through 
 other IDS Connectors. Thus, a technical implementation of data sovereignty is guaranteed.
 
+![RAM Connector Architecture](assets/images/ram_architecture.png)
+
 An IDS Connector is composed of various system services:
 * Execution core container with Message Systems (Message Router/Bus)
 * Configuration Manager to configure the Connector (Execution Core Container, Application Container
@@ -32,8 +34,6 @@ An IDS Connector is composed of various system services:
 * Data Apps for data processing and handling
 * Application Container Management
 * Hardware/Operating System
-
-![RAM Connector Architecture](assets/images/ram_architecture.png)
 
 Primarily to establish trust, the IDS Connector also addresses Application Container Management,
 Network, OS, Hardware, etc. Furthermore, trust between different IDS participants is ensured by 
@@ -62,5 +62,5 @@ enforced. How the architecture is designed can be seen [here](documentation/arch
 ## Links
 
 [IDS Information Model](https://international-data-spaces-association.github.io/InformationModel/docs/index.html) • 
-[IDS RAM](https://internationaldataspaces.org/download/16630/) • 
+[IDS RAM](https://internationaldataspaces.org/use/reference-architecture/) • 
 [IDSA Jive](https://internationaldataspaces.org/make/communities/)
