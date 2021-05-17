@@ -34,9 +34,9 @@ contract agreements to then be able to retrieve raw data from a data provider.
 
 ---
 
-**Important**: For the following guide, note that the `/api/ids/data` endpoint may not be valid
-for other connector implementations. Check at which endpoint the data provider expects the IDS
-messages in advance.
+**Important**: Note that the `/api/ids/data` endpoint may not be valid for other connector 
+implementations. Check at which endpoint the data provider expects the IDS multipart messages in 
+advance.
 
 ---
 
