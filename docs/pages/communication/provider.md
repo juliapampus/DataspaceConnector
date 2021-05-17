@@ -259,7 +259,7 @@ refer to one specified http request or database query with fix parameters.
 If you want to leave it up to the consumer which part of the data should be retrieved, a reference 
 to the OpenApi description of the connected REST Api as "endpointDocumentation" may be supplied. 
 This is useful, for example, if the connected API is a generic Linked Data platform. The consumer 
-can then pass request parameters when retrieving data, which are automatically resolved by the 
+can then pass request parameters when retrieving data, which are automatically resolved at the 
 Dataspace Connector to the provider backend.
 
 ---

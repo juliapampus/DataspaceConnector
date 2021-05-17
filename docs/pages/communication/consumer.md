@@ -46,11 +46,11 @@ For sending a `POST` request, two parameters have to be set: the recipient and t
 As, in a first step, the data consumer only wants to read the self-description to get a list of
 resources, the requested element needs to be left empty.
 
-![Description Request](images/api-v1/endpoint-description-request.png)
+If the request is successful, the response body will contain a `BaseConnector` with a single catalog 
+or list of catalogs. 
 
-If the request is successful, the response body will contain a `DescriptionResponseMessage` as
-`header` and the data provider's self-description as `payload`. You will only see the payload string.
-The value `ids:offeredResource` at `ids:catalog` provides a list of all available resources that are
+To get the value `ids:offeredResource` at `ids:catalog` that provides a list of available resources 
+that are
 offered by the data provider. This does **not** contain the raw data.
 
 The URI at e.g. `"@type":"ids:Resource", "@id":"https://w3id.org/idsa/autogen/resource/a3d79eb3-328b-408e-b1b5-93c0459d98c4"`
