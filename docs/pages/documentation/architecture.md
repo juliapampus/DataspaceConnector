@@ -10,7 +10,7 @@ parent: Documentation
 # Architecture
 {: .fs-9 }
 
-For the developers, some software documentation is provided.
+Have a look at the Dataspace Connector's architecture.
 {: .fs-6 .fw-300 }
 
 ---

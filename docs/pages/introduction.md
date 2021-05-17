@@ -9,17 +9,18 @@ permalink: /Introduction
 # Introduction
 {: .fs-9 }
 
-New to IDS? 
+New to IDS? Get a short introduction and information about the reference architecture model at a glance.
 {: .fs-6 .fw-300 }
 
 ---
 
-Connector information from the reference architecture model at a glance.
-
 Einleitung IDS
+
+## IDS Ecosystem
 
 Übersicht Ecosystem
 
+## IDS Connector
 Was ist ein Connector?
 
 Ein IDS Connector wird durch das IDS RAM definiert
@@ -70,7 +71,7 @@ Data Usage Transparency
 
 
 
-
+## Reference Implementation
 Implementierung am Beispiel des DSC
 
 IDS Connector Referenzimplementierung der Abteilung Datenwirtschaft des Fraunhofer ISST
@@ -90,8 +91,6 @@ Unterstützt und gefördert durch die IDSA
 
 Verweis auf Architektur 
 
-## Documents
+## Links
 
-IDS Infomodel
-IDS RAM
-IDSA Jive
+[IDS Information Model]() • [IDS RAM]() • [IDSA Jive]()
