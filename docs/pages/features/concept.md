@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Concept
-nav_order: 2
+title: IDS-ready
+nav_order: 5
 description: ""
-permalink: /Features/Concept
+permalink: /Features/Ids-ready
 parent: Features
 ---
 

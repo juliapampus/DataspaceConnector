@@ -20,5 +20,5 @@ This section gives information about the [configuration](deployment/configuratio
 [building](deployment/build.md) of the Dataspace Connector. Please make sure that you get familiar 
 with at least these two subpages. After that, you may want to have a look at the 
 [Communication Guide](communication.md) and see how to provide and consume data with our IDS 
-Connector implementation. For further information about database and logging adjustments, a 
+Connector implementation. Further information about database and logging adjustments, a 
 Kubernetes-specific deployment, or one with a data routing framework is provided on the other pages.
