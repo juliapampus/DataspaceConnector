@@ -15,7 +15,7 @@ Here, you can find instructions for using Camel with the Dataspace Connector.
 
 ---
 
-If you want to setup the Dataspace Connector yourself, follow the instructions below. If you
+If you want to set up the Dataspace Connector yourself, follow the instructions below. If you
 encounter any problems, please have a look at the [FAQ](../faq.md).
 
 Clone the project: `git clone https://github.com/International-Data-Spaces-Association/DataspaceConnector.git`

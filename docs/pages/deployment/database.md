@@ -35,7 +35,7 @@ To use another database for the Connector, follow these steps:
     ```
 
 3. Check what types for large objects your chosen database supports. In some entity classes, some
-   fields reference another object and the column definition for the respective fields is set to
+   fields reference another object, and the column definition for the respective fields is set to
    the value `BLOB`(`@Column(columnDefinition = "BLOB")`). This type works for H2 but might not be
    supported in your chosen database. In that case, set the column definition to a supported value.
    Spring will take care of the rest. The next time you start the Connector, it will use the newly
@@ -93,8 +93,8 @@ Therefore, add the following service to the `docker-compose.yaml`:
      - ./postgres.env
 ```
 
-In the file `postgres-params.env`, specify the parameters database name, username, and password for
-the PostgreSQL container:
+In the file `postgres-params.env`, specify the database name, username, and password for the 
+PostgreSQL container:
 
 ```properties
 POSTGRES_USER=connector

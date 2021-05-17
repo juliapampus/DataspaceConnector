@@ -158,7 +158,7 @@ endpoint `GET /api/examples/configuration` to print a filled in Java object as J
 this to your needs, take the received string and place it in the `config.json`.
 
 If you want to connect to a running connector or any other system running at `https://`,
-keep in mind that you need to add the keystore to your truststore. Otherwise the communication
+keep in mind that you need to add the keystore to your truststore. Otherwise, the communication
 will fail. With the provided truststore, the Dataspace Connector accepts its own localhost
 certificate, public certificates, and any IDS keystore that was provided by the Fraunhofer AISEC.
 
@@ -299,7 +299,7 @@ Http tracing is disabled by default: `httptrace.enabled=false`.
 ### Jaeger
 
 If your want to access open telemetry, have a look at [this guide](build.md#docker). You can 
-customize the deployment with this lines:
+customize the deployment with these lines:
 
 ```properties
 opentracing.jaeger.udp-sender.host=localhost
@@ -320,7 +320,7 @@ clearing.house.url=https://ch-ids.aisec.fraunhofer.de/logs/messages/
 
 If you leave the Clearing House address blank, the connector will ignore sending IDS messages to it.
 
-Also for usage control, some settings are provided:
+Also, for usage control, some settings are provided:
 
 ```properties
 policy.negotiation=true
@@ -337,7 +337,7 @@ or the corresponding line within the `application.properties`.
 
 Note that the Dataspace Connector is able to received resources with usage policies that follow
 the IDS policy language but not one of the supported patterns. As, by default, the policy check on
-the data consumer side would not allow to access data whose policies cannot be enforced, you are
+the data consumer side would not allow accessing data whose policies cannot be enforced, you are
 able to ignore unsupported patterns with setting the boolean at the endpoint
 `/api/configuration/pattern` or the property `policy.allow-unsupported-patterns` in the
 `application.properties` to `true`. As a data consumer, you are bound to concluded contract 
