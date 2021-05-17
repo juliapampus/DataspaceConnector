@@ -60,9 +60,9 @@ extensible software that encapsulates the IDS information model from connected s
 ## Libraries
 
 | Library | License | Owner | Contact |
-| ------- | ------- | ----- | ------- |
-| [IDS Information Model Library](https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/de/fraunhofer/iais/eis/ids/infomodel/) | [Apache 2.0](https://github.com/International-Data-Spaces-Association/Java-Representation-of-IDS-Information-Model) | Fraunhofer IAIS | [e-mail](contact@ids.fraunhofer.de) |
-| [IDS Information Model Serializer Library](https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/de/fraunhofer/iais/eis/ids/infomodel-serializer/) | Apache 2.0 | Fraunhofer IAIS | [e-mail](contact@ids.fraunhofer.de) |
+|:--------|:--------|:------|:--------|
+| [IDS Information Model Library](https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/de/fraunhofer/iais/eis/ids/infomodel/) | [Apache 2.0](https://github.com/International-Data-Spaces-Association/Java-Representation-of-IDS-Information-Model) | Fraunhofer IAIS | [E-Mail](contact@ids.fraunhofer.de) |
+| [IDS Information Model Serializer Library](https://maven.iais.fraunhofer.de/artifactory/eis-ids-public/de/fraunhofer/iais/eis/ids/infomodel-serializer/) | Apache 2.0 | Fraunhofer IAIS | [E-Mail](contact@ids.fraunhofer.de) |
 | [IDS Framework](https://mvn.ids.isst.fraunhofer.de/nexus/repository/ids-public/) | [Apache 2.0](https://github.com/International-Data-Spaces-Association/IDS-Connector-Framework) | Fraunhofer ISST | [Tim Berthold](mailto:tim.berthold@isst.fraunhofer.de) |
 | IDS Messaging Service | [Apache 2.0](https://github.com/International-Data-Spaces-Association/IDS-Messaging-Services) | Fraunhofer ISST & AISEC | [Tim Berthold](mailto:tim.berthold@isst.fraunhofer.de), [Matthias Böckmann](mailto:matthias.boeckmann@iais.fraunhofer.de) |
 
@@ -83,7 +83,7 @@ The table below will document the compatibility of the component's versions.
 ## IDS Communication
 
 | Component | License | Owner | Contact |
-| ------- | ------- | ----- | ------- |
-| [IDS Broker](https://broker.ids.isst.fraunhofer.de/) | [open core](https://github.com/International-Data-Spaces-Association/metadata-broker-open-core) | Fraunhofer IAIS | [e-mail](contact@ids.fraunhofer.de) |
+|:--------|:--------|:------|:--------|
+| [IDS Broker](https://broker.ids.isst.fraunhofer.de/) | [open core](https://github.com/International-Data-Spaces-Association/metadata-broker-open-core) | Fraunhofer IAIS | [E-Mail](contact@ids.fraunhofer.de) |
 | [DAPS](https://daps.aisec.fraunhofer.de/) | [Apache 2.0](https://github.com/Fraunhofer-AISEC/omejdn-server) | Fraunhofer AISEC | [Gerd Brost](mailto:gerd.brost@aisec.fraunhofer.de) |
 | [ParIS](https://paris.ids.isst.fraunhofer.de/) | [open core](https://github.com/International-Data-Spaces-Association/ParIS-open-core) | Fraunhofer IAIS | [e-mail](contact@ids.fraunhofer.de)
