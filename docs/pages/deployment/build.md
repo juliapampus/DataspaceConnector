@@ -100,6 +100,23 @@ steps:
 2. For starting the application, run `docker-compose up`. Have a look at the `docker-compose.yaml`
    and make your own configurations if necessary.
 
+### Open Telemetry with Jaeger
+
+To view tracing information, another Docker container has to be started:
+```commandline
+docker run -d --name jaeger \
+ -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
+  -p 5775:5775/udp \
+  -p 6831:6831/udp \
+  -p 6832:6832/udp \
+  -p 5778:5778 \
+  -p 16686:16686 \
+  -p 14268:14268 \
+  -p 14250:14250 \
+  -p 9411:9411 \
+  jaegertracing/all-in-one:1.22
+```
+The traces can then be accessed at [http://localhost:16686](http://localhost:16686).
 
 ## Kubernetes
 
@@ -111,16 +128,6 @@ Tests will be executed automatically when running Maven commands `package`, `ver
 `site`, or `deploy`. To run tests manually, execute the following commands in the root directory of 
 the project:
 
-Run all tests
-```commandline
-mvn test
-```
-Run specific test class
-```commandline
-mvn test -Dtest=[full class name]
-```
-
-Run a specific test case (single method)
-```commandline
-mvn test -Dtest=[full class name]#[method name]
-```
+* Run all tests: `mvn test`
+* Run specific test class: `mvn test -Dtest=[full class name]`
+* Run a specific test case (single method): `mvn test -Dtest=[full class name]#[method name]`

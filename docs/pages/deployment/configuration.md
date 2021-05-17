@@ -46,7 +46,7 @@ to change anything except the [**proxy settings**](#proxy).
 endpoint `GET /api/examples/configuration` to print a filled in Java object as JSON-LD. Adapt
 this to your needs, take the received string and place it in the `config.json`.
 
-If you want to connect to a running connector or any other system running at `https`,
+If you want to connect to a running connector or any other system running at `https://`,
 keep in mind that you need to add the keystore to your truststore. Otherwise the communication
 will fail. With the provided truststore, the Dataspace Connector accepts its own localhost
 certificate, public certificates, and any IDS keystore that was provided by the Fraunhofer AISEC.
