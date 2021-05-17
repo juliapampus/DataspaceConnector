@@ -94,8 +94,8 @@ cache-control: no-cache,no-store,max-age=0,must-revalidate
  x-xss-protection: 1; mode=block 
 ```
 
-If the resource was successfully registered, the endpoint will respond with `Http.OK` and the
-location of the created resource within the response headers. 
+If the resource was successfully registered, the endpoint will respond with `Http.CREATED` and the
+`location`field of the created resource within the response header. 
 
 Response body:
 ```json
