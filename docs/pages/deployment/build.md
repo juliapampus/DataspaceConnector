@@ -42,8 +42,10 @@ If everything worked fine, the connector is available at
 running with an h2 database.
 
 ---
+
 **Note**: After successfully building the project, the Javadocs as a static website can be found
 at `/target/apidocs`. Open the `index.html` in a browser of your choice.
+
 ---
 
 The OpenApi documentation can be viewed at [https://localhost:8080/api/docs](https://localhost:8080/api/docs).
