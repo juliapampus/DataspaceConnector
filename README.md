@@ -10,9 +10,9 @@
 <p align="center">
   <a href="mailto:info@dataspace-connector.de">Contact</a> •
   <a href="#contributing">Contribute</a> •
+  <a href="https://juliapampus.github.io/DataspaceConnector/">Docs</a> •
   <a href="https://github.com/FraunhoferISST/DataspaceConnector/issues">Issues</a> •
-  <a href="#license">License</a> •
-  <a href="https://github.com/FraunhoferISST/DataspaceConnector/wiki">Wiki</a>
+  <a href="#license">License</a>
 </p>
 
 
@@ -60,8 +60,8 @@ This is an ongoing project of the [Data Economy](https://www.isst.fraunhofer.de/
 business unit of the [Fraunhofer ISST](https://www.isst.fraunhofer.de/en.html). 
 
 The core development is driven by
-* [Heinrich Pettenpohl](https://github.com/HeinrichPet), [Fraunhofer ISST](https://www.isst.fraunhofer.de/en.html)
-* [Julia Pampus](https://github.com/juliapampus), [Fraunhofer ISST](https://www.isst.fraunhofer.de/en.html)
+* [Heinrich Pettenpohl](https://github.com/HeinrichPet), [Fraunhofer ISST](https://www.isst.fraunhofer.de/en.html), Project Manager
+* [Julia Pampus](https://github.com/juliapampus), [Fraunhofer ISST](https://www.isst.fraunhofer.de/en.html), Lead Developer
 * [Brian-Frederik Jahnke](https://github.com/brianjahnke), [Fraunhofer ISST](https://www.isst.fraunhofer.de/en.html)
 * [Ronja Quensel](https://github.com/ronjaquensel), [Fraunhofer ISST](https://www.isst.fraunhofer.de/en.html)
 

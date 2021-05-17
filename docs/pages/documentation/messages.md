@@ -41,13 +41,13 @@ incoming messages.
 | ResourceUnavailableMessage          | request            |          | message indicating that a specific resource is unavailable |
 | QueryMessage                        | request            |          | message intended to be consumed by specific components |
 
-`request` = initially send this kind of IDS message | `response` = response with this IDS message
+`request` = initially send this kind of IDS message, `response` = response with this IDS message
 
 ## Sequences
 
 ![Automated IDS Messaging Sequence](assets/images/message_sequence_1.png)
 
-![Automated Data Updates](./assets/images/message_sequence_2.png)
+![Automated Data Updates](assets/images/message_sequence_2.png)
 
 ## Examples
 

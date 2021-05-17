@@ -50,10 +50,11 @@ the issue. They map the structure of the roadmap.
 
 ## Branches
 
-This repository has a `dev` branch in addition to the `master` branch. The idea is to always 
-merge other branches into the `dev` branch (as SNAPSHOT version) and to push the changes from 
-there into the `master` only for releases. This way, the `dev` branch is always up to date, 
-with the risk of small issues, while the `master` only contains official releases.
+This project follows the common [Git Flow](https://www.atlassian.com/de/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Der%20Git%2Dflow%2DWorkflow%20ist,Release%20des%20Projekts%20konzipiert%20wurde.&text=Git%2Dflow%20ist%20hervorragend%20f%C3%BCr,Release%2DZyklus%20nach%20Zeitplan%20geeignet.).
+The repository has a `dev` branch in addition to the `master` branch. The idea is to always 
+merge other branches into the `dev` branch and to push the changes from there into the `master` only 
+for releases. This way, the `dev` branch is always up to date, with the risk of small issues, while 
+the `master` only contains official releases.
 
 After creating an issue yourself or if you want to address an existing issue, you have to create a 
 branch with a unique number and name that assigns it to an issue. Therefore, follow the guidelines 
@@ -80,6 +81,14 @@ An example of a very good commit might look like this: `feat![login]: add awesom
 
 **Pay attention to never push your IDS keystore or certificate to the repository - not in a single 
 commit! Therefore, the `resources/conf` directory is added to the `.gitignore`.**
+
+## Checkstyle
+
+
+
+## License Information
+
+
 
 ## Versioning
 The Dataspace Connector uses the [SemVer](https://semver.org/) for versioning. The release versions 
