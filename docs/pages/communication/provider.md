@@ -42,24 +42,6 @@ connector. This can be done by providing some important information as metadata 
 example will be explained in the following. 
 
 ```
-{
-  "title": "Sample Resource",
-  "description": "This is an example resource containing weather data.",
-  "keywords": [
-    "weather",
-    "data",
-    "sample"
-  ],
-  "publisher": "https://openweathermap.org/",
-  "language": "EN",
-  "licence": "http://opendatacommons.org/licenses/odbl/1.0/",
-  "sovereign": "https://openweathermap.org/",
-  "endpointDocumentation": "https://example.com",
-  "key": "value"
-}
-```
-
-```
 curl -X 'POST' \
   'https://localhost:8080/api/offers' \
   -H 'accept: */*' \
@@ -191,6 +173,9 @@ rather complicated and it is not trivial to manually create a valid policy, endp
 to obtain example policies(`POST //api/examples/policy`) or to validate created and modified strings 
 (`POST /api/examples/validation`).
 
+By adding multiple rules to one contract offer, you are now able to add multiple usage policies to
+one resource. E.g. the data usage can be logged and the data should be deleted at date x.
+
 ![Policy Endpoints](../../assets/images/swagger_policy.png)
 
 ### Step 2: Add Local Data
@@ -249,14 +234,14 @@ In this case, the data will be stored within and loaded from the internal databa
 
 ### Step 3: Add Remote Data
 
-For remote data, as in this example, it is possible to set the attributes `accessUrl`,`username`, 
+For remote data, as in this example, it is possible to set the attributes `accessUrl`, `username`, 
 and `password` to define details for the data providing connector on how to retrieve the data from
 connected backend systems or existing APIs. You do not need to specify whether you added remote or 
 local data. The Dataspace Connector automatically classifies an artifact as `remote` as soon as the 
-`accessUrl`property is filled.
+`accessUrl` property is filled.
 
 Currently, the Dataspace Connector can natively establish a connection via http, https, and https
-with basic authentication. To connector to other backends, take a look at how to integrate 
+with basic authentication. To connect to other backends, take a look at how to integrate 
 routing frameworks as explained [here](../deployment/camel.md).
 
 In case an external REST API should be connected and this API usually expects query parameters from
