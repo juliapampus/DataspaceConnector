@@ -21,14 +21,13 @@ architecture patterns. It supports the IDS Information Model in the latest versi
 corresponding Java library and integrates the IDS Connector Framework for identity and message 
 handling. It provides a REST API for loading, updating, and deleting IDS persisted resources.
 
-`Java` `Maven` `Spring Boot` `Spring Data JPA` `Spring Security` `OpenAPI` `HATEOAS` `Swagger`
-`LOG4J2` `Docker` `Kubernetes` `JSON(-LD)` `Jaeger` `TLS`
-
 The Dataspace Connector uses modern technologies, standards (e.g. RFC 7231, IDS Information Model, 
-IDS Usage Control Language), and best practices (pattern implementation, e.g. MVC, 
-Chain-Of-Responsibility).
+IDS Usage Control Language), and best practices (pattern implementation, e.g. MVC).
 Software quality is ensured by adhering to and implementing code style guides and logging and 
 providing high test coverage. Quality checks and project reports can be generated via maven plugin.
+
+`Java` `Maven` `Spring Boot` `Spring Data JPA` `Spring Security` `OpenAPI` `HATEOAS` `Swagger`
+`LOG4J2` `Docker` `Kubernetes` `JSON(-LD)` `Jaeger` `TLS`
 
 All functionalities and architectural decisions are aimed at providing a maintainable and easily
 extensible software that encapsulates the IDS information model from connected systems.

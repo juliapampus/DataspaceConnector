@@ -1,9 +1,9 @@
 ---
 layout: default
-title: API
+title: REST API
 nav_order: 3
 description: ""
-permalink: /Documentation/Api
+permalink: /Documentation/RestApi
 parent: Documentation
 ---
 

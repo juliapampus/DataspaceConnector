@@ -41,14 +41,17 @@ file up to date to your own connector settings. In case you are using the demo c
 to change anything except the [**proxy settings**](#proxy).
 
 ---
+
 **Note**: If you are not familiar with the IDS Information Model, the API provides an
 endpoint `GET /api/examples/configuration` to print a filled in Java object as JSON-LD. Adapt
 this to your needs, take the received string and place it in the `config.json`.
 ---
+
 **Note**: If you want to connect to a running connector or any other system running at `https`,
 keep in mind that you need to add the keystore to your truststore. Otherwise the communication
 will fail. With the provided truststore, the Dataspace Connector accepts its own localhost
 certificate, public certificates, and any IDS keystore that was provided by the Fraunhofer AISEC.
+
 ---
 
 ## Step 2
@@ -157,10 +160,12 @@ A full configuration example may look like this:
 ```
 
 ---
+
 **Note**: The `TEST_DEPLOYMENT` mode and accepting a demo cert is for testing purposes only! 
 This mode is a security risk and cannot ensure that the connector is talking to a verified IDS
 participant. Furthermore, messages from the Dataspace Connector without a valid IDS certificate
 may not be accepted by other Connector implementations.
+
 ---
 
 ## Step 3 (optional)
