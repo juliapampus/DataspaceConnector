@@ -185,7 +185,8 @@ have to create a representation and add it to the resource offer. Then, we have 
 artifact and add it to the representation.
 
 Within the artifact, you can specify whether you want to provide local data or remote data from an
-external API. For local data, you would have to add the following body to your `POST` request:
+external API (see [Step 3](#step-3-add-remote-data)). For local data, you would have to add the 
+following body to your `POST` request:
 
 ```json
 {
@@ -255,11 +256,11 @@ the user, e.g. to retrieve the raw data in various formats, multiple artifacts c
 for one representation, or multiple artifacts with one representation each. Each artifact can then 
 refer to one specified http request or database query with fix parameters. 
 
-If you want to leave it up to the consumer which part of the data it can retrieve, a reference to 
-the OpenApi description of the connected REST Api as "endpointDocumentation" is sufficient and there 
-is no need to define multiple artifacts. This is useful, for example, if the connected API is a 
-generic Linked Data platform. The consumer can then pass request parameters when retrieving data, 
-which are automatically resolved by the Dataspace Connector to the provider backend.
+If you want to leave it up to the consumer which part of the data should be retrieved, a reference 
+to the OpenApi description of the connected REST Api as "endpointDocumentation" may be supplied. 
+This is useful, for example, if the connected API is a generic Linked Data platform. The consumer 
+can then pass request parameters when retrieving data, which are automatically resolved by the 
+Dataspace Connector to the provider backend.
 
 ---
 
@@ -270,7 +271,7 @@ connector, but are only used for internal data handling.
 
 ---
 
-### Step 4: Publish Resources at IDS Broker (optional)
+### Step 4: Publish Resources at an IDS Broker (optional)
 
 For communicating with an IDS metadata broker, some endpoints are provided.
 - `POST /api/ids/connector/update`: send a `ConnectorUpdateMessage` with the connector's
@@ -282,7 +283,7 @@ For communicating with an IDS metadata broker, some endpoints are provided.
 
 ## Policy Enforcement
 
-When the data provider receives an `ArtifactRequestMessage` from an external Connector, the
+When the data provider receives an `ArtifactRequestMessage` from an external connector, the
 `ArtifactMessageHandler` iterates through all contracts of a resource offer and all of its rules
 to check the policy pattern. If the pattern matches one of the following five, an appropriate policy 
 check is performed:`PROVIDE_ACCESS`, `PROHIBIT_ACCESS`, `USAGE_DURING_INTERVAL`, 
