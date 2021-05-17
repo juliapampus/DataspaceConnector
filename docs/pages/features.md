@@ -64,27 +64,3 @@ The table below will document the compatibility of the component's versions.
 | --- | --- | --- |
 | v4.x.x  |     |     |
 | v5  |     |     |
-
-
-### Core Functionality
-
-For roadmap details,
-see [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#core-functionality).
-
-| Task                       | Responsible | Status  | Description                                  | Note |
-|:---------------------------|:------------|:--------|:---------------------------------------------|:-----|
-| Database Improvement       | ISST        | done    | [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#database-improvement)      |      |
-| Exception Handling         | ISST        | done    | [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#exception-handling)        |      |
-| Logging                    | ISST        | done    | [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#logging)                   |      |
-| Code Quality Improvements  | ISST        | done    | [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#code-quality-improvements) |      |
-
-### IDS Functionality
-
-For roadmap details,
-see [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#ids-functionality).
-
-| Task                        | Responsible | Status | Description                                   | Note |
-|:----------------------------|:------------|:-------|:----------------------------------------------|:-----|
-| Ids-ready Test              | ISST        | done   | [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#ids-ready-test)             |      |
-| Config Manager Integration  | ISST        | done   | [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#config-manager-integration) |      |
-| Basic Policy Negotiation    | ISST        | done   | [here](https://github.com/FraunhoferISST/DataspaceConnector/wiki/roadmap#basic-policy-negotiation)   |      |
