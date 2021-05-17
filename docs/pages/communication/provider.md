@@ -249,6 +249,12 @@ the user, e.g. to retrieve the raw data in various formats, multiple artifacts c
 for one representation, or multiple artifacts with one representation each. Each artifact can then 
 refer to one specified http request or database query with fix parameters. 
 
+If you want to leave it up to the consumer which part of the data it can retrieve, a reference to 
+the OpenApi description of the connected REST Api as "endpointDocumentation" is sufficient and there 
+is no need to define multiple artifacts. This is useful, for example, if the connected API is a 
+generic Linked Data platform. The consumer can then pass request parameters when retrieving data, 
+which are automatically resolved by the Dataspace Connector to the provider backend.
+
 ---
 
 **Note**: While the connector has the ability to store data internally, it never duplicates data 
