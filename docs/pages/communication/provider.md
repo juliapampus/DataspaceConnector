@@ -59,7 +59,7 @@ example will be explained in the following.
 }
 ```
 
-```http request
+```
 curl -X 'POST' \
   'https://localhost:8080/api/offers' \
   -H 'accept: */*' \
