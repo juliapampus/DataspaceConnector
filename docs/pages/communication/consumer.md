@@ -99,13 +99,6 @@ or list of catalogs.
 }
 ````
 
-To get the value `ids:offeredResource` at `ids:catalog` that provides a list of available resources 
-that are
-offered by the data provider. 
-
-The URI at e.g. `"@type":"ids:Resource", "@id":"https://w3id.org/idsa/autogen/resource/a3d79eb3-328b-408e-b1b5-93c0459d98c4"`
-is needed for further requests.
-
 ### Step 2: Request Metadata
 
 To request the metadata of a specific catalog, resource, representation, artifact, or contract, use 
@@ -268,12 +261,12 @@ and its resource offer [https://localhost:8080/api/offers/98d6818b-a1b7-4171-a31
 }
 ````
 
-### Step 3: Handle Out a Contract Agreement
+### Step 3: Negotiate a Contract Agreement
 
 As you are not allowed to retrieve data from a provider without a matching contract agreement, you
-first have to handle one out. As explained before, a single resource can contain multiple representations. Therefore, the data
-consumer needs to check all available artifacts in the requested metadata and choose one for the
-data request.
+first have to handle one out. As explained before, a single resource can contain multiple 
+representations. Therefore, the data consumer needs to check all available artifacts in the 
+requested metadata and choose one for the data request. 
 
 ![Artifact Request](images/api-v1/endpoint-artifact-request.png)
 
