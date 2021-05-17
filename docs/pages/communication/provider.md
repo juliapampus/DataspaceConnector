@@ -17,12 +17,12 @@ See how to provide data with the Dataspace Connector.
 
 First of all, the connector provides an endpoint for requesting its self-description.
 The self-description is returned as JSON-LD string and contains several information about the running
-connector instance. This includes e.g. the title, the maintainer, the Information Model version, and
+connector instance. This includes e.g. the title, the maintainer, the IDS Informodel version, and
 the resource catalog. At the public endpoint `/`, the resource catalog is not displayed. It can only
-be accessed with admin credentials or by sending an IDS description request message (see
-[here](#step-1-request-a-connectors-self-description)).
+be accessed with admin credentials at `GET /api/connector` or by sending an IDS description request 
+message as explained [here](consumer.md#step-1-request-a-connectors-self-description)).
 
-![Selfservice Endpoints](images/api-v1/endpoints-selfservice.png)
+![Selfservice Endpoints](../../assets/images/swagger_connector.png)
 
 ## Step by Step
 
@@ -30,11 +30,25 @@ For adding resources to the running connector as a data provider, have a look at
 
 ### Step 1: Register Data Resources
 
-The endpoint `POST /admin/api/resources/resource` can be used for registering resources at the
+The endpoint `POST /api/offers` can be used for registering a new resource offer at the
 connector. This can be done by providing some important information as metadata in JSON format. An
-example will be explained in the following. Adding a uuid by yourself is an optional feature.
+example will be explained in the following. 
 
 ```
+{
+  "title": "Sample Resource",
+  "description": "This is an example resource containing weather data.",
+  "keywords": [
+    "weather",
+    "data",
+    "sample"
+  ],
+  "publisher": "https://openweathermap.org/",
+  "language": "EN",
+  "licence": "http://opendatacommons.org/licenses/odbl/1.0/",
+  "sovereign": "https://openweathermap.org/",
+  "endpointDocumentation": "https://example.com"
+}
 {
   "title": "Sample Resource",
   "description": "This is an example resource containing weather data.",
@@ -60,13 +74,17 @@ example will be explained in the following. Adding a uuid by yourself is an opti
 }
 ```
 
-The values `title`, `description`, `keywords`, `owner`, `license`, and `version` describe the data
-resource and will be used to fill in the IDS Information Model attributes for IDS communication with
-a connector as data consumer.
+A version number is generated automatically and is increased with every entity change. As well as 
+the creation and modification date.
 
-If the resource was successfully registered, the endpoint will respond with the uuid of the created
-data resource. The endpoints `PUT`, `GET`, and `DELETE` `/{resource-id}` provide standard CRUD
-functions to read, update, and delete the metadata, respectively the data resource.
+The values `title`, `description`, `keywords`, `publisher`, `sovereign`, `license`, and `version` 
+describe the data resource and will be used to fill in the IDS Information Model attributes for IDS 
+communication with a connector as data consumer.
+
+If the resource was successfully registered, the endpoint will respond with `Http.OK` and the 
+location of the created resource. The endpoints `PUT`, `GET`, and `DELETE` `/offers/{id}` provide 
+standard CRUD functions to read, update, and delete the metadata, respectively the data resource 
+- as described [here](../documentation/data-model.md).
 
 As a resource contains the metadata of a raw data string, it can contain several representations
 that are used to setup a connection to the internal database or an external backend system.
