@@ -28,7 +28,7 @@ message as explained [here](consumer.md#step-1-request-a-connectors-self-descrip
 
 For requesting data and metadata as a data consumer, two endpoints are provided. A description
 request is used for requesting the metadata and a contract request is used for handling out 
-contract agreements to then be able to retrieve raw data from a data provider.
+contract agreements as a condition to retrieve raw data from a data provider.
 
 ![Connector Communication Endpoints](../../assets/images/swagger_communication_endpoints.png)
 
