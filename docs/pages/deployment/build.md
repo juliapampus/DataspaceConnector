@@ -18,10 +18,7 @@ Here, you can find instructions for using Camel with the Dataspace Connector.
 If you want to setup the Dataspace Connector yourself, follow the instructions below. If you
 encounter any problems, please have a look at the [FAQ](../faq.md).
 
-At first, clone the repository:
-```commandline
-git clone https://github.com/International-Data-Spaces-Association/DataspaceConnector.git
-```
+Clone the repository: `git clone https://github.com/International-Data-Spaces-Association/DataspaceConnector.git`
 
 **For configurations, please have a look at [this section](configuration.md) first.**
 
@@ -105,7 +102,7 @@ steps:
 To view tracing information, another Docker container has to be started:
 ```commandline
 docker run -d --name jaeger \
- -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
+  -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
   -p 5775:5775/udp \
   -p 6831:6831/udp \
   -p 6832:6832/udp \
