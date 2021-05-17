@@ -17,7 +17,7 @@ See how to consume data with the Dataspace Connector.
 
 First of all, the connector provides an endpoint for requesting its self-description.
 The self-description is returned as JSON-LD string and contains several information about the running
-connector instance. This includes e.g. the title, the maintainer, the Information Model version, and
+connector instance. This includes e.g. the title, the maintainer, the IDS Infomodel version, and
 the resource catalog. At the public endpoint `/`, the resource catalog is not displayed. It can only
 be accessed with admin credentials or by sending an IDS description request message (see
 [here](#step-1-request-a-connectors-self-description)).
