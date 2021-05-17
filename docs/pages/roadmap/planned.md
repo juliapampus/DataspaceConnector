@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Roadmap
-nav_order: 2
+title: Planned Features
+nav_order: 1
 description: ""
-permalink: /Features/Roadmap
-parent: Features
+permalink: /Features/PlannedFeatures
+parent: Roadmap
 ---
 
-# Roadmap
+# Planned Features
 {: .fs-9 }
 
 For transparent and collaborative development, the project's roadmap and each aspect are described in detail.

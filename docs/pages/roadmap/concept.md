@@ -1,10 +1,10 @@
 ---
 layout: default
 title: IDS-ready
-nav_order: 3
+nav_order: 2
 description: ""
-permalink: /Features/Ids-ready
-parent: Features
+permalink: /Roadmap/Ids-ready
+parent: Roadmap
 ---
 
 # IDS-ready Implementation Concept

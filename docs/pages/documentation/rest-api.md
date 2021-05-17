@@ -52,7 +52,7 @@ Swagger UI for adding offers to catalogs:
 
 ![Swagger API Catalog to Offers](../../assets/images/swagger_catalogs_offer.png)
 
-As described [here](../features/overview.md), the Dataspace Connector partly supports HATEOAS and 
+As described [here](../features.md), the Dataspace Connector partly supports HATEOAS and 
 returns correct response codes according to the HTTP1.1 standard (RFC 7231). The OpenApi 
 documentation is provided within the repository and can additionally be created at runtime as 
 explained [here](../deployment/build.md#maven).

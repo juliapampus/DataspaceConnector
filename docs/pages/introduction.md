@@ -40,7 +40,7 @@ Network, OS, Hardware, etc. Furthermore, trust between different IDS participant
 certifying the software components used, i.a. the IDS Connector. Thereby, three different trust 
 levels are defined: base, trust, and trust+. All profiles comprise IDS-specific requirements and 
 some from Secure Development and the DIN standard for IT security for industrial automation systems 
-(DIN EN IEC 62443-4-2). Details are listed [here](features/concept.md).
+(DIN EN IEC 62443-4-2). Details are listed [here](roadmap/concept.md).
 
 ## Reference Implementation
 
@@ -51,7 +51,7 @@ promoted by IDSA.
 
 In addition to the project, other components are also being developed open source. For example, the 
 ConfigManager can be used to configure the connector and enable user-friendly interactions via a GUI.
-Find more details [here](features/overview.md#libraries).
+Find more details [here](features.md#libraries).
 
 The Dataspace Connector is designed to provide an easy entry point into the IDS Ecosystem, enabling 
 projects and companies to connect to Data Spaces and exchange data in a sovereign way. Thereby, the 

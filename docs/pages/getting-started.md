@@ -86,7 +86,7 @@ Possible rejection messages:
 
 Other IDS components also have running instances that can be used for testing. The Dataspace 
 Connector currently mainly supports communication with the IDS Broker and DAPS - as described 
-[here](features/overview.md#ids-communication). A working communication with other components is not 
+[here](features.md#ids-communication). A working communication with other components is not 
 guaranteed.
 
 * The Dynamic Attribute Provisioning Service (DAPS) is available at
