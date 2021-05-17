@@ -16,3 +16,6 @@ Ensuring developments following the same goal, the project's roadmap and each as
 {: .fs-6 .fw-300 }
 
 ---
+
+In this section you will find planned features and the ones that are specified by the IDS 
+certification criteria.
