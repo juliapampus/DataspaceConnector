@@ -9,87 +9,55 @@ permalink: /Introduction
 # Introduction
 {: .fs-9 }
 
-New to IDS? Get a short introduction and some information about the reference architecture model at a glance.
+New to IDS? Get a short introduction and some information about the IDS Connector at a glance.
 {: .fs-6 .fw-300 }
 
 ---
 
-Einleitung IDS
+The IDS Connector is the core of the data space. Is the gateway to connect existing systems and 
+their data to an IDS ecosystem. Its architecture and functionalities are defined by the IDS RAM and 
+specified by the certification criteria. 
 
-## IDS Ecosystem
+The IDS Connector allows to exchange data and enrich it with metadata. An important aspect of this 
+are usage conditions, which can be defined, administrated, and implemented by the Connector. The 
+metadata is described by the ontology of the IDS Information Model. The main advantage of the IDS 
+Reference architecture and the use of an IDS Connector is the decentralized data storage. This 
+enables data integration from different data sources and allows data access exclusively through 
+other IDS Connectors. Thus, a technical implementation of data sovereignty is guaranteed.
 
-Übersicht Ecosystem
-
-## IDS Connector
-Was ist ein Connector?
-
-Ein IDS Connector wird durch das IDS RAM definiert
-Zusätzliche Kriterien werden durch die Zertifizierung der Komponente vorgegeben
-
-Austausch von Daten und Anreicherung dieser mit Metainformationen
-Ontologie zur Beschreibung von Ressourcen
-Nutzungsbedingungen
-Vorteil: kein zentraler Datenspeicher
-Datenintegration aus verschiedenen Datenquellen
-Datenzugriff ausschließlich durch andere IDS Connectoren
-Technische Umsetzung der Datensouveränität
-Security Profile/Zertifizierung: base, trust, trust+
+An IDS Connector is composed of various system services:
+* Execution core container with Message Systems (Message Router/Bus)
+* Configuration Manager to configure the Connector (Execution Core Container, Application Container
+  Management, Network, Firewalls, etc.)
+* Data Apps for data processing and handling
+* Application Container Management
+* Hardware/Operating System
 
 ![RAM Connector Architecture](assets/images/ram_architecture.png)
 
-Setzt sich zusammen aus verschiedenen Systemservices
-Execution core container with Message Systems (Message Router/Bus)
-Configuration Manager to configure the Connector (Execution Core Container, Application Container Management, Network, Firewalls, etc.)
-Data Apps
-Application Container Management
-Hardware/Operating System
-
-DIN EN Norm: IT-Sicherheit für industrielle Automatisierungssysteme
-IDS Connector adressiert auch die Bereiche Application Container Management, Netzwerk, OS, Hardware etc.  Trust
-
-DIN EN IEC 62443-4-2
-IAC: Identification and authentication control
-UC: Use Control
-SI: System integrity
-DC: Data confidentiality
-RDF: Restricted data flow
-RA: Resource availability
-SAR: Software Application Requirements
-NDR: Network device requirements
-
-Secure Development: Testing, Documentation, etc.
-
-IDS Specification
-Communication Integrity
-Data Usage Control
-Informationsmodel
-Identity and Access Management
-Broker Service
-Operating System
-Apps and App Store Connection
-Data Usage Transparency
-
-
+Primarily to establish trust, the IDS Connector also addresses Application Container Management,
+Network, OS, Hardware, etc. Furthermore, trust between different IDS participants is ensured by 
+certifying the software components used, i.a. the IDS Connector. Thereby, three different trust 
+levels are defined: base, trust, and trust+. All profiles comprise IDS-specific requirements and 
+some from Secure Development and the DIN standard for IT security for industrial automation systems 
+(DIN EN IEC 62443-4-2). Details are listed [here](features/concept.md).
 
 ## Reference Implementation
-Implementierung am Beispiel des DSC
 
-IDS Connector Referenzimplementierung der Abteilung Datenwirtschaft des Fraunhofer ISST
-Open Source Softwareprojekt
-Einfacher Einstieg in das IDS Ecosystem
-Anschluss an den Data Space und Austausch von Daten
-Prüfen und Durchsetzen von Nutzungsbedingungen
+The Dataspace Connector is one of several implementation of an IDS Connector. It is the reference
+implementation of the data economy departement of the Fraunhofer Institute for Software and Systems
+Engineering (ISST). It is maintained as an open source software project on GitHub, supported and 
+promoted by IDSA.
 
-Entwicklung weiterer DSC und IDS Komponenten
-ConfigManager zur Konfigration des Dataspace Connectors
-Vereinfachte Bedienung über die Configmanager-GUI
+In addition to the project, other components are also being developed open source. For example, the 
+ConfigManager can be used to configure the connector and enable user-friendly interactions via a GUI.
+Find more details [here](features/overview.md#libraries).
 
-Unterstützt und gefördert durch die IDSA
+The Dataspace Connector is designed to provide an easy entry point into the IDS Ecosystem, enabling 
+projects and companies to connect to Data Spaces and exchange data in a sovereign way. Thereby, the 
+defined usage policies are not only transferred between the IDS participants, but also directly 
+enforced. How the architecture is designed can be seen [here](documentation/architecture.md).
 
-
-
-
-Verweis auf Architektur 
 
 ## Links
 

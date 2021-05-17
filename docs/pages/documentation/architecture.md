@@ -57,8 +57,8 @@ Not every use case needs Data Apps, so the Dataspace Connector should be designe
 The idea is to enable different message bus systems, like Apache Airflow, Argo, Kafka, etc.
 
 ## Network Architecture
-The Connector will support a segmented network. Every running container will be associated to a
-different network zone by providing its own virtual network stack. The Connector as the core
+The Dataspace Connector will support a segmented network. Every running container will be associated 
+to a different network zone by providing its own virtual network stack. The Connector as the core
 container will have root rights and be able to manage network and firewall configurations for all
 separated containers and their networks. As root namespace, it provides an external IP and can be
 reached from an external network. Details can be found [here](../features/concept.md).
