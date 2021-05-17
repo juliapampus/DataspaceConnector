@@ -1,7 +1,7 @@
 ---
 layout: default
 title: IDS-ready
-nav_order: 5
+nav_order: 3
 description: ""
 permalink: /Features/Ids-ready
 parent: Features
@@ -15,7 +15,8 @@ Following the IDS certification criteria, the IDS Connector has to provide certa
 
 ---
 
-The ids-ready implementation concept of the Dataspace Connector can be found 
+The Dataspace Connector is "IDS-ready" approved since 03.12.2020, for the certification level base
+(+ usage control). The ids-ready implementation concept can be found 
 [here](assets/files/DSC_implementation_concept_ids_ready_v4.pdf). In the table below is an overview 
 of all criteria for the base profile and whether it is already implemented or not. A more detailed 
 description of the individual issues can be found in the PDF file.

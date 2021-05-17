@@ -36,3 +36,20 @@ the Configuration Manager), helps to monitor and manage the loads of the individ
 download images, and start or stop pods/containers.
 
 ![Connector Setup](images/camel-architecture.png)
+
+Wartungsfreundlich, einfach erweiterbar, Kapselung des IDS-Informationsmodells
+The basic communication logic is inside the IDS Framework, whereas the business logic is in focus of the DSC itself.
+Execution core?
+No, It does not contain a message bus/router
+It can be used also without the configuration manager! Which is important for many smaller use cases. That’s also the reason why it is not divided into control and data plane.
+Why is Camel separate?
+Not every use case needs Data Apps
+We wanted to hold the DSC lightweight
+Our idea is that we want to enable different message bus systems, like Apache Airflow, Argo, Kafka,…
+
+## Network Architecture
+The Connector will support a segmented network. Every running container will be associated to a
+different network zone by providing its own virtual network stack. The Connector as the core
+container will have root rights and be able to manage network and firewall configurations for all
+separated containers and their networks. As root namespace, it provides an external IP and can be
+reached from an external network. Details can be found [here](../features/concept.md).

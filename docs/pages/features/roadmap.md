@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Roadmap
-nav_order: 4
+nav_order: 2
 description: ""
 permalink: /Features/Roadmap
 parent: Features
@@ -26,7 +26,7 @@ implementation can be freely scheduled and extended, depending on the interests 
 potential contributors. The rating ranges from 1 (= high priority) to 3 (= low priority).
 
 | Priority | Task                                  | Status      | Note        |
-|:--------:|:--------------------------------------|:------------|:------------|
+|:---------|:--------------------------------------|:------------|:------------|
 | 2        | Connector Orchestration in Kubernetes | in progress |    |
 | 2        | Network Support                       |             |    |
 | 2        | Identity & Access Management          |             |    |
