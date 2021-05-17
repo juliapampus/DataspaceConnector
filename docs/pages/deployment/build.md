@@ -88,7 +88,7 @@ steps:
 1. Navigate to `DataspaceConnector`. To build the image, run `docker build -t <IMAGE_NAME:TAG> .`
    (e.g. `docker build -t dataspaceconnector .`).
 2. For running your image as a container, follow [these](https://docs.docker.com/get-started/part2/)
-   instructions: `docker run --publish 8080:8080 --detach --name bb <IMAGE_NAME:TAG>`
+   instructions: `docker run --publish 8080:8080 --detach --name dataspaceconnector <IMAGE_NAME:TAG>`
 
 ### Option 2: Using Docker Compose
 1. The `docker-compose.yml` sets up the connector application and a PostgreSQL database. If
