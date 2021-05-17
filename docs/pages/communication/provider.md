@@ -26,7 +26,10 @@ message as explained [here](consumer.md#step-1-request-a-connectors-self-descrip
 
 ## Step by Step
 
-For adding resources to the running connector as a data provider, have a look at the following steps.
+To understand the structure of a resource, please first take a look at the 
+[data model section](../documentation/data-model.md) and the [REST API explanation](../documentation/rest-api.md). 
+Then, for adding resources to the running connector as a data provider, have a look at the following 
+steps.
 
 ### Step 1: Register Data Resources
 
@@ -47,7 +50,8 @@ example will be explained in the following.
   "language": "EN",
   "licence": "http://opendatacommons.org/licenses/odbl/1.0/",
   "sovereign": "https://openweathermap.org/",
-  "endpointDocumentation": "https://example.com"
+  "endpointDocumentation": "https://example.com",
+  "key": "value"
 }
 {
   "title": "Sample Resource",
@@ -74,23 +78,115 @@ example will be explained in the following.
 }
 ```
 
-A version number is generated automatically and is increased with every entity change. As well as 
+```http request
+curl -X 'POST' \
+  'https://localhost:8080/api/offers' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "title": "Sample Resource",
+  "description": "This is an example resource containing weather data.",
+  "keywords": [
+    "weather",
+    "data",
+    "sample"
+  ],
+  "publisher": "https://openweathermap.org/",
+  "language": "EN",
+  "licence": "http://opendatacommons.org/licenses/odbl/1.0/",
+  "sovereign": "https://openweathermap.org/",
+  "endpointDocumentation": "https://example.com",
+  "key": "value"
+}'
+```
+
+The values `title`, `description`, `keywords`, `publisher`, `sovereign`, `license`, etc. describe 
+the data resource and will be used to fill in the IDS Information Model attributes for IDS 
+communication with a connector as data consumer.
+
+A version number is generated automatically and is increased with every entity change. As well as
 the creation and modification date.
 
-The values `title`, `description`, `keywords`, `publisher`, `sovereign`, `license`, and `version` 
-describe the data resource and will be used to fill in the IDS Information Model attributes for IDS 
-communication with a connector as data consumer.
+---
+
+**Note**: If you need any further attributes, feel free to just type custom key value pairs. They
+will be stored as `additional` inside the database - as shown in this example.
+
+---
 
 If the resource was successfully registered, the endpoint will respond with `Http.OK` and the 
 location of the created resource. The endpoints `PUT`, `GET`, and `DELETE` `/offers/{id}` provide 
 standard CRUD functions to read, update, and delete the metadata, respectively the data resource 
 - as described [here](../documentation/data-model.md).
 
-As a resource contains the metadata of a raw data string, it can contain several representations
-that are used to setup a connection to the internal database or an external backend system.
-By default, each resource must have at least one representation. Further details will be explained
-in Step 3. A representation can be added to a resource by using the endpoint
-`POST /admin/api/resources/{resource-id}/representation`. See this example:
+See the response of the previously registered resource below.
+
+Response headers:
+
+```http request
+cache-control: no-cache,no-store,max-age=0,must-revalidate 
+ connection: keep-alive 
+ content-type: application/hal+json 
+ date: Mon,17 May 2021 17:16:53 GMT 
+ expires: 0 
+ keep-alive: timeout=60 
+ location: https://localhost:8080/api/offers/ca502fbc-fbeb-4125-bd65-97536647d623 
+ pragma: no-cache 
+ strict-transport-security: max-age=31536000 ; includeSubDomains 
+ transfer-encoding: chunked 
+ x-content-type-options: nosniff 
+ x-frame-options: DENY 
+ x-xss-protection: 1; mode=block 
+```
+
+Response body:
+```json
+{
+  "creationDate": "2021-05-17T19:16:53.385+0200",
+  "modificationDate": "2021-05-17T19:16:53.385+0200",
+  "title": "Sample Resource",
+  "description": "This is an example resource containing weather data.",
+  "keywords": [
+    "weather",
+    "data",
+    "sample"
+  ],
+  "publisher": "https://openweathermap.org/",
+  "language": "EN",
+  "licence": "http://opendatacommons.org/licenses/odbl/1.0/",
+  "version": 1,
+  "sovereign": "https://openweathermap.org/",
+  "endpointDocumentation": "https://example.com",
+  "additional": {
+    "key": "value"
+  },
+  "_links": {
+    "self": {
+      "href": "https://localhost:8080/api/offers/ca502fbc-fbeb-4125-bd65-97536647d623"
+    },
+    "contracts": {
+      "href": "https://localhost:8080/api/offers/ca502fbc-fbeb-4125-bd65-97536647d623/contracts{?page,size,sort}",
+      "templated": true
+    },
+    "representations": {
+      "href": "https://localhost:8080/api/offers/ca502fbc-fbeb-4125-bd65-97536647d623/representations{?page,size,sort}",
+      "templated": true
+    },
+    "catalogs": {
+      "href": "https://localhost:8080/api/offers/ca502fbc-fbeb-4125-bd65-97536647d623/catalogs{?page,size,sort}",
+      "templated": true
+    }
+  }
+}
+```
+
+Next to the metadata
+
+As a resource contains the metadata of a raw data string, it can contain several representations,
+e.g. to describe different data types. By default, each resource must have at least one 
+representation. Further details will be explained in Step 3. A representation can be created by 
+using the endpoint  added to a 
+resource by using the endpoint`POST /admin/api/resources/{resource-id}/representation`. See this example:
 
 ```
 {
