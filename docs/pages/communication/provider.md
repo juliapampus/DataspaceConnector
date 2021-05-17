@@ -28,11 +28,11 @@ message as explained [here](consumer.md#step-1-request-a-connectors-self-descrip
 
 To understand the structure of a resource, please first take a look at the 
 [data model section](../documentation/data-model.md) and the [REST API explanation](../documentation/rest-api.md). 
-Then, for adding resources to the running connector as a data provider, have a look at the following 
+For adding resources to the running connector as a data provider, have a look at the following 
 steps.
 
-In the following example, we want to provide the raw data from 
-[here](https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02)
+In the following example, we want to provide the raw 
+[data](https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02)
 to a data consumer.
 
 ### Step 1: Register Data Resources
@@ -167,22 +167,22 @@ As stated [here](../documentation/data-model.md), **an offered resource is only 
 contains at least one contract offer and at least one representation with at least one artifact. 
 Otherwise, it will not be listed in the IDS self-description because there is no complete data offer.**
 
-So, next, create a contract and at least one rule, that you add to the contract. The rule is the 
-object, that contains the usage policy string as `value`. Since the IDS Usage Control Language is 
+Next, create a contract and one rule, that you add to the contract. The rule is the 
+object, that contains the usage policy as `value`. Since the IDS Usage Control Language is 
 rather complicated and it is not trivial to manually create a valid policy, endpoints are provided 
-to obtain example policies(`POST //api/examples/policy`) or to validate created and modified strings 
-(`POST /api/examples/validation`).
+to obtain example policies(`POST /api/examples/policy`) or to validate created and modified usage
+policies (`POST /api/examples/validation`).
 
 By adding multiple rules to one contract offer, you are now able to add multiple usage policies to
-one resource. E.g. the data usage can be logged and the data should be deleted at date x.
+one resource (e.g. the data usage can be logged and the data should be deleted at a given date).
 
 ![Policy Endpoints](../../assets/images/swagger_policy.png)
 
 ### Step 2: Add Local Data
 
-So, after we created a resource offer and added it to a catalog and a contract offer, we have to 
-create a representation and link it to the resource offer. Then, we have to create an artifact and 
-link it to the representation.
+After we created created a contract offer and a resource offer and added the latter to a catalog, we 
+have to create a representation and link it to the resource offer. Then, we have to create an 
+artifact and link it to the representation.
 
 Within the artifact, you can specify whether you want to provide local data or remote data.
 For local data, you would have to add the following body to your `POST` request:
