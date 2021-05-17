@@ -57,27 +57,16 @@ Hereinafter, an example on how to use a PostgreSQL database with the Connector w
 ### Setup PostgreSQL
 
 The following steps are the same for other databases, just with different values.
+Adjust datasource properties in `application.properties`:
 
-1. Add PostgreSQL dependency to the `pom.xml`:
-
-   ```xml
-   <dependency>
-     <groupId>org.postgresql</groupId>
-     <artifactId>postgresql</artifactId>
-     <version>42.2.5</version>
-   </dependency>
-   ```
-
-2. Adjust datasource properties in `application.properties`:
-
-   ```properties
-   spring.datasource.url = jdbc:postgresql://[postgres-host]:5432/[database-name]
-   spring.datasource.platform = postgres
-   spring.datasource.driver-class-name = org.postgresql.Driver
-   spring.datasource.username = [username]
-   spring.datasource.password = [password]
-   spring.jpa.database-platform = org.hibernate.dialect.PostgreSQLDialect
-   ```
+```properties
+spring.datasource.url = jdbc:postgresql://[postgres-host]:5432/[database-name]
+spring.datasource.platform = postgres
+spring.datasource.driver-class-name = org.postgresql.Driver
+spring.datasource.username = [username]
+spring.datasource.password = [password]
+spring.jpa.database-platform = org.hibernate.dialect.PostgreSQLDialect
+```
 
 ### Execute Docker
 

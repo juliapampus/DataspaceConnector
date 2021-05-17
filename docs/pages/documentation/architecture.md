@@ -35,7 +35,7 @@ the data flow between different systems and apps. A monitoring system, e.g. Yach
 the Configuration Manager), helps to monitor and manage the loads of the individual components,
 download images, and start or stop pods/containers.
 
-![Connector Setup](assets/images/dsc_architecture.png)
+![Connector Setup](../../assets/images/dsc_architecture.png)
 
 All functionalities and architectural decisions aim at providing a maintainable and easily
 extensible software that encapsulates the IDS information model from connected systems.
