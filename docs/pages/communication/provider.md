@@ -115,9 +115,9 @@ will be stored as `additional` inside the database - as shown in this example.
 ---
 
 If the resource was successfully registered, the endpoint will respond with `Http.OK` and the 
-location of the created resource. The endpoints `PUT`, `GET`, and `DELETE` `/offers/{id}` provide 
-standard CRUD functions to read, update, and delete the metadata, respectively the data resource 
-- as described [here](../documentation/data-model.md).
+location of the created resource within the response headers. The endpoints `PUT`, `GET`, and 
+`DELETE` `/offers/{id}` provide standard CRUD functions to read, update, and delete the metadata, 
+respectively the data resource - as described [here](../documentation/data-model.md).
 
 See the response of the previously registered resource below.
 
@@ -180,7 +180,9 @@ Response body:
 }
 ```
 
-Next to the metadata
+Apart from the metadata, the response body contains links to itself and its parents and children.
+
+
 
 As a resource contains the metadata of a raw data string, it can contain several representations,
 e.g. to describe different data types. By default, each resource must have at least one 
