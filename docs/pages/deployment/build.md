@@ -97,9 +97,25 @@ steps:
 2. For starting the application, run `docker-compose up`. Have a look at the `docker-compose.yaml`
    and make your own configurations if necessary.
 
+
+## Kubernetes
+
+For a deployment with Kubernetes, have a look at [this](kubernetes.md) documentation.
+
+## Tests
+
+Tests will be executed automatically when running Maven commands `package`, `verify`, `install`,
+`site`, or `deploy`. To run tests manually, execute the following commands in the root directory of 
+the project:
+* Run all tests: `mvn test`
+* Run specific test class: `mvn test -Dtest=[full class name]`
+* Run a specific test case (single method): `mvn test -Dtest=[full class name]#[method name]`
+
+
 ### Open Telemetry with Jaeger
 
-To view tracing information, another Docker container has to be started:
+To view tracing information, uncomment the dependency in the `pom.xml` at line 344. Then, a Docker 
+container has to be started:
 ```
 docker run -d --name jaeger \
   -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
@@ -114,16 +130,3 @@ docker run -d --name jaeger \
   jaegertracing/all-in-one:1.22
 ```
 The traces can then be accessed at [http://localhost:16686](http://localhost:16686).
-
-## Kubernetes
-
-For a deployment with Kubernetes, have a look at [this](kubernetes.md) documentation.
-
-## Tests
-
-Tests will be executed automatically when running Maven commands `package`, `verify`, `install`,
-`site`, or `deploy`. To run tests manually, execute the following commands in the root directory of 
-the project:
-* Run all tests: `mvn test`
-* Run specific test class: `mvn test -Dtest=[full class name]`
-* Run a specific test case (single method): `mvn test -Dtest=[full class name]#[method name]`
