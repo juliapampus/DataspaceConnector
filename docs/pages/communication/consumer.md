@@ -46,6 +46,8 @@ For sending a `POST` request, two parameters have to be set: the recipient and t
 As, in a first step, the data consumer only wants to read the self-description to get a list of
 resources, the requested element needs to be left empty.
 
+![Description Request](../../assets/images/swagger_description_request.png)
+
 If the request is successful, the response body will contain a `BaseConnector` with a single catalog 
 or list of catalogs. 
 
@@ -122,7 +124,7 @@ rejection reason from the provider connector.
 With this, you can navigate yourself through the data offers of the provider and choose the artifact
 whose data you want to retrieve. A response will **never** contain the raw data.
 
-Following the example data, that was provided with the [provider guide](provider.md), we would end 
+Following the example data, that was provided within the [provider guide](provider.md), we would end 
 up with the following information when requesting 
 [https://localhost:8080/api/catalogs/eda0cda2-10f2-4b39-b462-5d4f2b1bb758](https://localhost:8080/api/catalogs/eda0cda2-10f2-4b39-b462-5d4f2b1bb758) 
 and its resource offer [https://localhost:8080/api/offers/98d6818b-a1b7-4171-a318-a0e11837bf10](https://localhost:8080/api/offers/98d6818b-a1b7-4171-a318-a0e11837bf10):
@@ -268,50 +270,112 @@ first have to handle one out. As explained before, a single resource can contain
 representations. Therefore, the data consumer needs to check all available artifacts in the 
 requested metadata and choose one for the data request. 
 
-![Artifact Request](images/api-v1/endpoint-artifact-request.png)
-
-The artifact request endpoint provides similar parameters as the description request endpoint. Next
-to the recipient, the requested artifact, the transfer contract, and the validation key of the
-description response have to be set.
-
----
-**Negotiate Contract**
-
-Before being able to request an artifact from the data provider, you have to negotiate a contract.
 Within the description response, you receive the resource's metadata containing a contract offer.
-Use the provided endpoint to put the received contract offer or a modified one in the payload and
-start the contract negotiation for a specific artifact.
+Use the provided endpoint to put the received contract offer's rule or a modified one in the payload 
+and start the contract negotiation for a specific artifact and resource. You will agree to the
+provided contract offer by using it for the contract request without content changes. You just have
+to add the artifact id as `ids:target` to the rule.
 
-![Contract Request](images/api-v1/endpoint-contract-request.png)
+If you provide wrong inputs, you will get a response body with a hint on what went wrong.
 
-The contract offer will be automatically turned into a contract request to then send is as the
-`payload` of a `ContractRequestMessage`. The provider connector will read this contract request,
-compare it to the artifact's (resp. the corresponding resource's) contract offer, return either a
+![Contract Request](../../assets/images/swagger_contract_request.png)
+
+With the `download` value you may specify whether you want the Dataspace Connector to download the
+data immediately or later.
+
+For our example, a correct request would look like that:
+
+```
+curl -X 'POST' \
+  'https://localhost:8080/api/ids/contract?recipient=https%3A%2F%2Flocalhost%3A8080%2Fapi%2Fids%2Fdata&resourceIds=https%3A%2F%2Flocalhost%3A8080%2Fapi%2Foffers%2F98d6818b-a1b7-4171-a318-a0e11837bf10&artifactIds=https%3A%2F%2Flocalhost%3A8080%2Fapi%2Fartifacts%2F9bb8162b-a754-43ed-a590-f50645bbf220&download=true' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '[
+ {
+      "@type" : "ids:Permission",
+      "@id" : "https://localhost:8080/api/rules/c5d94d73-f3b1-4b4d-b003-0c2e91e221c0",
+      "ids:description" : [ {
+        "@value" : "provide-access",
+        "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      } ],
+      "ids:title" : [ {
+        "@value" : "Example Usage Policy",
+        "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      } ],
+      "ids:action" : [ {
+        "@id" : "idsc:USE"
+      } ],
+      "ids:target": "https://localhost:8080/api/artifacts/9bb8162b-a754-43ed-a590-f50645bbf220"
+    }
+]'
+```
+
+The rule list will be automatically turned into a contract request to then send it to the provider.
+This will read this contract request, compare it to the artifact's
+(resp. the corresponding resource's) contract offers, and return either a
 `ContractRejectionMessage` or a `ContractAgreementMessage`.
 
-If the negotiation has been successful, you receive a contract agreement id. The corresponding
-contract agreement has been sent to the clearing house and stored in the provider's internal
-database for later access control. Take this id and set it as `transferContract` within the artifact
-request.
+As a response, we now receive the closed contract agreement:
+
+```
+{
+  "creationDate": "2021-05-17T21:16:01.050+0200",
+  "modificationDate": "2021-05-17T21:16:01.050+0200",
+  "remoteId": "https://localhost:8080/api/agreements/fb45ebeb-55a8-4aa6-bdd3-3765b067db2b",
+  "confirmed": true,
+  "value": "{\r\n  \"@context\" : {\r\n    \"ids\" : \"https://w3id.org/idsa/core/\"\r\n  },\r\n  \"@type\" : \"ids:ContractAgreement\",\r\n  \"@id\" : \"https://localhost:8080/api/agreements/fb45ebeb-55a8-4aa6-bdd3-3765b067db2b\",\r\n  \"ids:permission\" : [ {\r\n    \"@type\" : \"ids:Permission\",\r\n    \"@id\" : \"https://localhost:8080/api/rules/c5d94d73-f3b1-4b4d-b003-0c2e91e221c0\",\r\n    \"ids:target\" : {\r\n      \"@id\" : \"https://localhost:8080/api/artifacts/9bb8162b-a754-43ed-a590-f50645bbf220\"\r\n    },\r\n    \"ids:description\" : [ {\r\n      \"@value\" : \"provide-access\",\r\n      \"@type\" : \"http://www.w3.org/2001/XMLSchema#string\"\r\n    } ],\r\n    \"ids:title\" : [ {\r\n      \"@value\" : \"Example Usage Policy\",\r\n      \"@type\" : \"http://www.w3.org/2001/XMLSchema#string\"\r\n    } ],\r\n    \"ids:assignee\" : [ {\r\n      \"@id\" : \"https://w3id.org/idsa/autogen/baseConnector/7b934432-a85e-41c5-9f65-669219dde4ea\"\r\n    } ],\r\n    \"ids:assigner\" : [ {\r\n      \"@id\" : \"https://w3id.org/idsa/autogen/baseConnector/7b934432-a85e-41c5-9f65-669219dde4ea\"\r\n    } ],\r\n    \"ids:action\" : [ {\r\n      \"@id\" : \"idsc:USE\"\r\n    } ]\r\n  } ],\r\n  \"ids:provider\" : {\r\n    \"@id\" : \"https://w3id.org/idsa/autogen/baseConnector/7b934432-a85e-41c5-9f65-669219dde4ea\"\r\n  },\r\n  \"ids:consumer\" : {\r\n    \"@id\" : \"https://w3id.org/idsa/autogen/baseConnector/7b934432-a85e-41c5-9f65-669219dde4ea\"\r\n  },\r\n  \"ids:obligation\" : [ ],\r\n  \"ids:prohibition\" : [ ],\r\n  \"ids:contractDate\" : {\r\n    \"@value\" : \"2021-05-17T21:16:00.849+02:00\",\r\n    \"@type\" : \"http://www.w3.org/2001/XMLSchema#dateTimeStamp\"\r\n  },\r\n  \"ids:contractStart\" : {\r\n    \"@value\" : \"2021-05-17T21:16:00.849+02:00\",\r\n    \"@type\" : \"http://www.w3.org/2001/XMLSchema#dateTimeStamp\"\r\n  }\r\n}",
+  "_links": {
+    "self": {
+      "href": "https://localhost:8080/api/agreements/e6464bac-bed9-49ca-bafb-86fb4142b49c"
+    },
+    "artifacts": {
+      "href": "https://localhost:8080/api/agreements/e6464bac-bed9-49ca-bafb-86fb4142b49c/artifacts{?page,size,sort}",
+      "templated": true
+    }
+  }
+}
+```
+
+The corresponding contract agreement has been sent to the Clearing House and stored inside the 
+consumer's and provider's internal database for later access and usage control.
+
+If we change e.g. the `ids:action` from `idsc:USE` to `idsc:MODIFY`, we will receive a 
+`RejectionMessage` from the consumer:
+
+```
+{
+  "reason": {
+    "properties": null,
+    "@id": "idsc:MALFORMED_MESSAGE"
+  },
+  "payload": "Contract rejected.",
+  "type": "de.fraunhofer.iais.eis.ContractRejectionMessageImpl"
+}
+```
 
 ---
 
-Similar to step 2, if the request is successful, the response body will contain an
-`ArtifactResponseMessage` as `header` and the data resource's data as `payload`. This response's
-payload, as well, will be deserialized and the data stored into the internal database - next to the
-corresponding metadata. If the resource was saved successfully, you will get its UUID as response.
-If the DAT token within the `RequestMessage` was not valid, the requested artifact could not
-be found, the transfer contract was missing, a policy restriction was detected, or any other error
-arrived, you will receive a `RejectionMessage` with a rejection reason.
+**Note**: As the endpoint for contract requests expects a list of resource IDs, artifact IDS, and 
+rules, you are able to handle out contract agreements for multiple artifacts at once.
 
 ---
 
-**Note**: The Dataspace Connector only allows contract requests that correspond exactly to the
-offer. Advanced negotiation will be an upcoming task. Also note that contract negotiation is 
-enabled by default. To disable it, have a look at the 
-[configurations](../deployment/configuration.md#ids-settings).
+### Step 4: Access the Data
 
----
+Within the contract agreement, you can find a link to all negotiated artifacts. These provide 
+information on how to access the data string. Depending on whether data was already provided or 
+should be updated each time again, the Dataspace Connector as a data consumer automatically starts
+sending `ArtifactRequestMessages` with the correct artifact id and transfer contract id to request
+the data from the consumer.
+
+You may also set the `download` value manually on a data request or specify what agreement should be
+used.
+
+![Data Request](../../assets/images/swagger_artifact_data.png)
+
+Either way, the requested and downloaded data will be stored in the database as a bytestream and
+is automatically decoded on an API call.
+
 
 ## Policy Enforcement
 
