@@ -266,8 +266,8 @@ and its resource offer [https://localhost:8080/api/offers/98d6818b-a1b7-4171-a31
 ### Step 3: Negotiate a Contract Agreement
 
 As you are not allowed to retrieve data from a provider without a matching contract agreement, you
-first have to initiate a contract negotiation. As explained before, a single resource can contain 
-multiple representations. Therefore, the data consumer needs to check all available artifacts in the 
+first have to initiate a contract negotiation. A single resource can contain multiple 
+representations, therefore, the data consumer needs to check all available artifacts in the 
 requested metadata and choose one for the data request. 
 
 Within the description response, you receive the resource's metadata containing a contract offer.
