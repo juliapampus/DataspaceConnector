@@ -15,9 +15,8 @@ For transparent and collaborative development, the project's roadmap and each as
 
 ---
 
-Some requirements are derived from the 
-[IDS-ready implementation concept](assets/files/DSC_implementation_concept_ids_ready_v4.pdf) as 
-listed [here](concept.md). Below, you can find an overview of general requirements that will be
+Some requirements are derived from the IDS-ready implementation concept as listed 
+[here](concept.md). Below, you can find an overview of general requirements that will be
 addressed in future development. We distinguish between core and ids functionality.
 
 ## Core-Functionality
@@ -49,7 +48,7 @@ The implementation of the following requirements primarily focuses on IDS develo
 Responsible for this are mainly developers from the Fraunhofer ISST.
 
 | Timeline | Task                                   | Status      | Note        |
-|:---------|:---------------------------------------|:------------|:------------|
+|:--------:|:---------------------------------------|:------------|:------------|
 | Q4/20    | Ids-ready Test                         | done        |    |
 |          | ConfigManager Integration              | done        |    |
 |          | Basic Policy Negotiation               | done        |    |
@@ -58,7 +57,7 @@ Responsible for this are mainly developers from the Fraunhofer ISST.
 |          | Query Broker                           |             | integration via ConfigManager |
 |          | Integration of IDSCP 2.0               |             | postponed to Q2 |
 |          | IDS-LDP Integration                    |             | postponed to Q2 |
-|          | Support Query Parameters               | done        |                                                |   |
+|          | Support Query Parameters               | done        |    |
 |          | Basic Clearing House Integration       | in progress | postponed to Q2 |
 | Q2/21    | Usage Control Extension                |             |    |
 |          | Support ParIS                          |             |    |
