@@ -10,7 +10,7 @@ parent: Deployment
 # Build
 {: .fs-9 }
 
-Here, you can find instructions for using Camel with the Dataspace Connector.
+Take a look at the more detailed instructions to deploy the Dataspace Connector.
 {: .fs-6 .fw-300 }
 
 ---
