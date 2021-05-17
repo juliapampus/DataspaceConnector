@@ -124,7 +124,6 @@ For a deployment with Kubernetes, have a look at [this](kubernetes.md) documenta
 Tests will be executed automatically when running Maven commands `package`, `verify`, `install`,
 `site`, or `deploy`. To run tests manually, execute the following commands in the root directory of 
 the project:
-
 * Run all tests: `mvn test`
 * Run specific test class: `mvn test -Dtest=[full class name]`
 * Run a specific test case (single method): `mvn test -Dtest=[full class name]#[method name]`

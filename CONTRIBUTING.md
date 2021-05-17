@@ -89,7 +89,6 @@ commit! Therefore, the `resources/conf` directory is added to the `.gitignore`.*
 ## License Information
 
 
-
 ## Versioning
 The Dataspace Connector uses the [SemVer](https://semver.org/) for versioning. The release versions 
 are tagged with their respective version.
