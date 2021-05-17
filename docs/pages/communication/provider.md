@@ -15,8 +15,8 @@ See how to provide data with the Dataspace Connector.
 
 ---
 
-First of all, the connector provides an endpoint for requesting its self-description.
-The self-description is returned as JSON-LD string and contains several information about the running
+The connector provides an endpoint for requesting its self-description.
+The self-description is returned as JSON-LD and contains several information about the running
 connector instance. This includes e.g. the title, the maintainer, the IDS Informodel version, and
 the resource catalog. At the public endpoint `/`, the resource catalog is not displayed. It can only
 be accessed with admin credentials at `GET /api/connector` or by sending an IDS description request 
