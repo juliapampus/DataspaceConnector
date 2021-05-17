@@ -29,7 +29,7 @@ providing high test coverage. Quality checks and project reports can be generate
 `Java` `Maven` `Spring Boot` `Spring Data JPA` `Spring Security` `OpenAPI` `HATEOAS` `Swagger`
 `LOG4J2` `Docker` `Kubernetes` `JSON(-LD)` `Jaeger` `TLS`
 
-All functionalities and architectural decisions are aimed at providing a maintainable and easily
+All functionalities and architectural decisions aim at providing a maintainable and easily
 extensible software that encapsulates the IDS information model from connected systems.
 
 * Identity management: Central Identity Provider/DAPS, IDS certificates (X.509v3)
