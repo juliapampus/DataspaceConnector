@@ -303,7 +303,6 @@ the data provider returns the data. If not, it will respond with a `RejectionRea
 
 Currently, a data consumer cannot subscribe to a resource, and the Dataspace Connector as a data 
 provider does not automatically send `ResourceUpdateMessages` to every data consumer on metadata
-changes. Instead, the data provider has to automatically trigger update messages by using the 
-respective endpoint.
+changes. Instead, the data provider has to trigger update messages by using the respective endpoint.
 
 ![Resource Update](../../assets/images/swagger_resource_updates.png)
