@@ -79,4 +79,4 @@ The table below will document the compatibility of the component's versions.
 |:--------|:--------|:------|:--------|
 | [IDS Broker](https://broker.ids.isst.fraunhofer.de/) | [open core](https://github.com/International-Data-Spaces-Association/metadata-broker-open-core) | Fraunhofer IAIS | [E-Mail](contact@ids.fraunhofer.de) |
 | [DAPS](https://daps.aisec.fraunhofer.de/) | [Apache 2.0](https://github.com/Fraunhofer-AISEC/omejdn-server) | Fraunhofer AISEC | [Gerd Brost](mailto:gerd.brost@aisec.fraunhofer.de) |
-| [ParIS](https://paris.ids.isst.fraunhofer.de/) | [open core](https://github.com/International-Data-Spaces-Association/ParIS-open-core) | Fraunhofer IAIS | [e-mail](contact@ids.fraunhofer.de)
+| [ParIS](https://paris.ids.isst.fraunhofer.de/) | [open core](https://github.com/International-Data-Spaces-Association/ParIS-open-core) | Fraunhofer IAIS | [E-Mail](contact@ids.fraunhofer.de)

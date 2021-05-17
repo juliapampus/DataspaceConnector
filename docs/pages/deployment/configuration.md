@@ -33,44 +33,37 @@ The resource folder `resources/conf` provides three important files that are loa
   ensures the connection to trusted addresses.
 * `config.json`: The configuration is used to set important properties for IDS message handling.
 
-## Step 1
+## Step 1: Connector Properties
 
 When starting the application, the `config.json` will be scanned for important connector
-information, e.g. its UUID, its address, contact information, or proxy settings. Please keep this
-file up to date to your own connector settings. In case you are using the demo cert, you don't need
-to change anything except the [**proxy settings**](#proxy).
+information, e.g. its ID, address, contact information, or proxy settings. Please keep this
+file up to date to your custom settings. In case you want to use the demo cert, you don't need
+to change anything except the proxy settings.
 
----
-
-**Note**: If you are not familiar with the IDS Information Model, the API provides an
-endpoint `GET /api/examples/configuration` to print a filled in Java object as JSON-LD. Adapt
-this to your needs, take the received string and place it in the `config.json`.
-
-If you want to connect to a running connector or any other system running at `https://`,
-keep in mind that you need to add the keystore to your truststore. Otherwise the communication
-will fail. With the provided truststore, the Dataspace Connector accepts its own localhost
-certificate, public certificates, and any IDS keystore that was provided by the Fraunhofer AISEC.
-
----
-
-## Step 2
-
-In the provided `config.json`, the `ids:connectorDeployMode` is set to `idsc:TEST_DEPLOYMENT`. This
-allows to use the `keystore-localhost.p12` as an IDS certificate. For testing purpose, the existing
-cert can be used, as on application start, the IDS Framework will not get a valid DAT from the DAPS
-and for received messages, the sent DAT will not be checked.
-
-To turn on the DAT checking, you need to set the `ids:connectorDeployMode` to `idsc:PRODUCTIVE_DEPLOYMENT`.
-For getting a trusted certificate, contact [Gerd Brost](mailto:gerd.brost@aisec.fraunhofer.de).
-Add the keystore with the IDS certificate inside to the `resources/conf` and change the filename at
-`ids:keyStore` accordingly. In addition, set your connector id to uniquely identify your connector 
-towards e.g. the IDS Metadata Broker:
+For outgoing requests, the connector needs information about an existing system proxy that needs to
+be set in the `resources/conf/config.json`.
 
 ```json
-"ids:connectorDescription" : {
-    "@type" : "ids:BaseConnector",
-    "@id" : "https://w3id.org/idsa/autogen/baseConnector/xxx",
+"ids:connectorProxy" : [ {
+    "@type" : "ids:Proxy",
+    "@id" : "https://w3id.org/idsa/autogen/proxy/548dc73a-ccfb-4039-9569-4b8e219b90bc",
+    "ids:proxyAuthentication" : {
+      "@type" : "ids:BasicAuthentication",
+      "@id" : "https://w3id.org/idsa/autogen/basicAuthentication/47e3cd59-d351-4f5b-99fc-561c94bad5e1"
+    },
+    "ids:proxyURI" : {
+      "@id" : "http://host:port"
+    },
+    "ids:noProxy" : [ {
+      "@id" : "https://localhost:8080/"
+    }, {
+      "@id" : "http://localhost:8080/"
+    } ]
+  } ]
 ```
+
+Check if your system is running behind a proxy. If this is the case, specify the `ids:proxyURI` and
+change `ids:noProxy` if necessary. Otherwise, delete the key `ids:connectorProxy` and its values.
 
 A full configuration example may look like this:
 ```json
@@ -160,36 +153,112 @@ A full configuration example may look like this:
 
 ---
 
-**Note**: The `TEST_DEPLOYMENT` mode and accepting a demo cert is for testing purposes only! 
-This mode is a security risk and cannot ensure that the connector is talking to a verified IDS
-participant. Furthermore, messages from the Dataspace Connector without a valid IDS certificate
-may not be accepted by other Connector implementations.
+**Note**: If you are not familiar with the IDS Information Model, the API provides an
+endpoint `GET /api/examples/configuration` to print a filled in Java object as JSON-LD. Adapt
+this to your needs, take the received string and place it in the `config.json`.
+
+If you want to connect to a running connector or any other system running at `https://`,
+keep in mind that you need to add the keystore to your truststore. Otherwise the communication
+will fail. With the provided truststore, the Dataspace Connector accepts its own localhost
+certificate, public certificates, and any IDS keystore that was provided by the Fraunhofer AISEC.
 
 ---
 
-## Step 3 (optional)
+## Step 2: IDS Certificate
+
+In the provided `config.json`, the `ids:connectorDeployMode` is set to `idsc:TEST_DEPLOYMENT`. This
+allows to use the `keystore-localhost.p12` as an IDS certificate. For testing purpose, the existing
+cert can be used, as on application start, the IDS Framework will not get a valid DAT from the DAPS
+and for received messages, the sent DAT will not be checked.
+
+To turn on the DAT checking, you need to set the `ids:connectorDeployMode` to 
+`idsc:PRODUCTIVE_DEPLOYMENT`. For getting a trusted certificate, contact 
+[Gerd Brost](mailto:gerd.brost@aisec.fraunhofer.de). Add the keystore with the IDS certificate 
+inside to the `resources/conf` and change the filename at `ids:keyStore` accordingly. In addition, 
+set your connector id to uniquely identify your connector towards e.g. the IDS Metadata Broker:
+
+```json
+"ids:connectorDescription" : {
+    "@type" : "ids:BaseConnector",
+    "@id" : "CONNECTOR_URL",
+```
+
+---
+
+**Note**: The `TEST_DEPLOYMENT` mode and accepting a demo cert is for testing purposes only! 
+This mode is a **security risk** and cannot ensure that the connector is talking to a verified IDS
+participant. Furthermore, messages from the Dataspace Connector without a valid IDS certificate
+may not be accepted by other Connector implementations and will not be accepted by the IDS Metadata
+Broker running in the IDS lab.
+
+---
+
+## Step 3: General Settings (optional)
 
 The `application.properties` specifies several Spring Boot and IDS configurations. 
 
+### Tomcat 
+
 To define on which port the connector should be running, change `server.port={PORT}`.
 
+### OpenApi
+
+You can change Swagger properties by changing the following settings:
+
+```properties
+springdoc.swagger-ui.path=/api/docs
+springdoc.swagger-ui.operationsSorter=alpha
+springdoc.swagger-ui.disable-swagger-default-url=true
+```
+
+### SSL
 
 If you want to add your own SSL certificate, check the corresponding path. As the provided 
 certificate only supports the application running at `localhost`, you may replace this with your 
 IDS keystore, if you want to host the connector in a productive environment.
 
-## Authentication
-The application uses Basic Authentication. Each endpoint behind `/**`, needs a user 
+```properties
+server.ssl.enabled
+server.ssl.key-store-type
+server.ssl.key-store
+server.ssl.key-store-password
+server.ssl.key-alias
+```
+
+```properties
+configuration.path
+configuration.keyStorePassword
+configuration.keyAlias
+configuration.trustStorePassword
+```
+
+### Http Connections
+
+For customizing timeout settings for incoming and outgoing requests, you may customize the 
+following lines: 
+
+```properties
+http.timeout.connect=10000
+http.timeout.read=10000
+http.timeout.write=10000
+http.timeout.call=10000
+```
+
+Not that either the call timeout is used, or the other three values.
+
+### Authentication
+
+The application uses Spring Security. Each endpoint behind `/**`, needs a user 
 authentication, except the open IDS endpoint at `/api/ids/data`.
 
 Have a look at the blocked endpoints in the `ConfigurationAdapter` class to add or change endpoints
 yourself. In case you don't want to provide authentication for your backend maintenance, feel free
 to remove the corresponding lines.
 
-If you want to change the default credentials, go to `application.properties`. The properties are
-located at `spring.security.user.name` and `spring.security.user.password`.
+For changing the default credentials, the properties are located at `spring.security.user.name` 
+and `spring.security.user.password`.
 
-## Database
+### Database
 
 The Dataspace Connector uses Spring Data JPA to set up the database and manage interactions with it.
 Spring Data JPA supports many well-known relational databases out of the box. Thus, the internal H2
@@ -197,34 +266,82 @@ can be replaced by e.g. MySQL, PostgreSQL, or Oracle databases with minimal effo
 
 To use another database for the Dataspace Connector, follow [these](database.md) steps.
 
-## Proxy
+Settings are provided within the `application.properties` at:
 
-For outgoing requests, the connector needs information about an existing system proxy that needs to
-be set in the `resources/conf/config.json`.
+```properties
+spring.datasource.url
+spring.datasource.driverClassName
+spring.datasource.username
+spring.datasource.password
 
-```json
-"ids:connectorProxy" : [ {
-    "@type" : "ids:Proxy",
-    "@id" : "https://w3id.org/idsa/autogen/proxy/548dc73a-ccfb-4039-9569-4b8e219b90bc",
-    "ids:proxyAuthentication" : {
-      "@type" : "ids:BasicAuthentication",
-      "@id" : "https://w3id.org/idsa/autogen/basicAuthentication/47e3cd59-d351-4f5b-99fc-561c94bad5e1"
-    },
-    "ids:proxyURI" : {
-      "@id" : "http://host:port"
-    },
-    "ids:noProxy" : [ {
-      "@id" : "https://localhost:8080/"
-    }, {
-      "@id" : "http://localhost:8080/"
-    } ]
-  } ]
+spring.h2.console.enabled=false
+spring.h2.console.path=/database
+spring.h2.console.settings.web-allow-others=true
 ```
 
-Check if your system is running behind a proxy. If this is the case, specify the `ids:proxyURI` and
-change `ids:noProxy` if necessary. Otherwise, delete the key `ids:connectorProxy` and its values.
-
-## Logging
+### Logging
 
 The Dataspace Connector provides multiple ways for logging and accessing information. Please find a
 detailed description on how to set up static and runtime configurations [here](logging.md).
+
+Settings are provided within the `application.properties` at:
+
+```properties
+management.endpoints.enabled-by-default=false
+management.endpoints.web.exposure.include=logfile, loggers
+management.endpoint.loggers.enabled=true
+management.endpoint.logfile.enabled=true
+management.endpoint.logfile.external-file=./log/dataspaceconnector.log
+```
+
+Http tracing is disabled by default: `httptrace.enabled=false`.
+
+### Jaeger
+
+If your want to access open telemetry, have a look at [this guide](build.md#docker). You can 
+customize the deployment with this lines:
+
+```properties
+opentracing.jaeger.udp-sender.host=localhost
+opentracing.jaeger.udp-sender.port=6831
+opentracing.jaeger.log-spans=true
+```
+
+### IDS Settings
+
+URLs of the DAPS for IDS identity management and the Clearing House for contract agreement and data 
+usage logging can be changed within the following lines:
+
+```properties
+daps.token.url=https://daps.aisec.fraunhofer.de
+daps.key.url=https://daps.aisec.fraunhofer.de/v2/.well-known/jwks.json
+clearing.house.url=https://ch-ids.aisec.fraunhofer.de/logs/messages/
+```
+
+If you leave the Clearing House address blank, the connector will ignore sending IDS messages to it.
+
+Also for usage control, some settings are provided:
+
+```properties
+policy.negotiation=true
+policy.allow-unsupported-patterns=false
+policy.framework=INTERNAL
+```
+
+Contract negotiation is enabled by default. This forces other Connectors to refer to a valid
+contract agreement when requesting data access via an `ArtifactRequestMessage`. If you want to 
+deactivate the policy negotiation, as data provider or data consumer, use the following endpoints
+or the corresponding line within the `application.properties`.
+
+![Policy Negotiation Settings](assets/images/negotiation_settings.png)
+
+Note that the Dataspace Connector is able to received resources with usage policies that follow
+the IDS policy language but not one of the supported patterns. As, by default, the policy check on
+the data consumer side would not allow to access data whose policies cannot be enforced, you are
+able to ignore unsupported patterns with setting the boolean at the endpoint
+`/api/configuration/pattern` or the property `policy.allow-unsupported-patterns` in the
+`application.properties` to `true`. As a data consumer, you are bound to concluded contract 
+agreements that are technically mapped to IDS usage policies. Therefore, you have to ensure, that 
+your backend applications technically enforce the usage policies instead.
+
+![Unsupported Pattern Settings](assets/images/pattern_settings.png)

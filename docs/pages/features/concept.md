@@ -10,7 +10,7 @@ parent: Features
 # IDS-ready Implementation Concept
 {: .fs-9 }
 
-Following the IDS certification criteria, the IDS Connector has to provide certain software criteria.
+Following the IDS certification criteria, an IDS Connector has to provide certain software criteria.
 {: .fs-6 .fw-300 }
 
 ---
@@ -21,7 +21,7 @@ The Dataspace Connector is "IDS-ready" approved since 03.12.2020, for the certif
 of all criteria for the base profile and whether it is already implemented or not. A more detailed 
 description of the individual issues can be found in the PDF file.
 
-|    | No.         | Title       | 
+| DSC | No.         | Title       | 
 |:---:|:------------|:------------|
 | x | COM 01      | Protected connection |
 | x | COM 02      | Mutual authentication |

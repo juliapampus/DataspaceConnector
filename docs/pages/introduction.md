@@ -9,7 +9,7 @@ permalink: /Introduction
 # Introduction
 {: .fs-9 }
 
-New to IDS? Get a short introduction and information about the reference architecture model at a glance.
+New to IDS? Get a short introduction and some information about the reference architecture model at a glance.
 {: .fs-6 .fw-300 }
 
 ---
@@ -93,4 +93,6 @@ Verweis auf Architektur
 
 ## Links
 
-[IDS Information Model]() • [IDS RAM]() • [IDSA Jive]()
+[IDS Information Model](https://international-data-spaces-association.github.io/InformationModel/docs/index.html) • 
+[IDS RAM](https://internationaldataspaces.org/download/16630/) • 
+[IDSA Jive](https://internationaldataspaces.org/make/communities/)
