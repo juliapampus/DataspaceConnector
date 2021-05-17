@@ -44,7 +44,7 @@ into the database.
 An overview of all entities and its attributes are listed in the table below. Between all parent and
 child entities n to m relations are provided.
 
-| Entity | Provided Attributes | Automated Attributes | Relation |
+| Entity | Provided Attributes | Automated Attributes | Relations |
 |:-------|:-----------|:---------------------|:---------|
 | catalog | title, description | - | n offers, n requests|
 | offer | title, description, keywords, publisher, sovereign, language, license, endpointDocumentation | version| n representations, n contracts, n catalogs |
