@@ -271,8 +271,8 @@ representations, therefore, the data consumer needs to check all available artif
 requested metadata and choose one for the data request. 
 
 Within the description response, you receive the resource's metadata containing a contract offer.
-Use the provided endpoint to put the received contract offer's rule or a modified one in the payload 
-and start the contract negotiation for a specific artifact and resource. You will agree to the
+Use the provided endpoint to put the received contract offer's rule or a modified one in the request
+body and start the contract negotiation for a specific artifact and resource. You will agree to the
 provided contract offer by using it for the contract request without content changes. You just have
 to add the artifact id as `ids:target` to the rule.
 
@@ -311,9 +311,9 @@ curl -X 'POST' \
 ```
 
 The rule list will be automatically turned into a contract request to then send it to the provider.
-This will read this contract request, compare it to the artifact's
-(resp. the corresponding resource's) contract offers, and return either a
-`ContractRejectionMessage` or a `ContractAgreementMessage`.
+This will read this contract request, compare it to the artifact's (respectively the corresponding 
+resource's) contract offers, and return either a `ContractRejectionMessage` or a 
+`ContractAgreementMessage`.
 
 As a response, we now receive the closed contract agreement:
 
@@ -340,7 +340,7 @@ The corresponding contract agreement has been sent to the Clearing House and sto
 consumer's and provider's internal database for later access and usage control.
 
 If we change e.g. the `ids:action` from `idsc:USE` to `idsc:MODIFY`, we will receive a 
-`RejectionMessage` from the consumer:
+`RejectionMessage` from the provider:
 
 ```
 {
