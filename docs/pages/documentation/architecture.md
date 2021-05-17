@@ -47,9 +47,9 @@ of the Dataspace Connector itself.
 
 Referring to the IDS Reference Architecture of a Connector, it can be stated that the Dataspace 
 Connector is not a classic Execution Core. It can be extended by the ConfigManager, but can also be 
-used without it. That is important for many smaller use cases and also the reason why it is e.g. not 
-divided into control and data plane. On top of that, it does not contain a message bus/router
-It can be used also without the configuration manager! 
+used without it. That is important for many smaller use cases and also the reason why the Connector 
+is e.g. not divided into control and data plane. On top of that, it does not contain a message 
+bus/router.
 
 **Why is Camel separate?**
 
