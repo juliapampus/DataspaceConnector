@@ -181,11 +181,11 @@ one resource (e.g. the data usage can be logged and the data should be deleted a
 ### Step 2: Add Local Data
 
 After we created created a contract offer and a resource offer and added the latter to a catalog, we 
-have to create a representation and link it to the resource offer. Then, we have to create an 
-artifact and link it to the representation.
+have to create a representation and add it to the resource offer. Then, we have to create an 
+artifact and add it to the representation.
 
-Within the artifact, you can specify whether you want to provide local data or remote data.
-For local data, you would have to add the following body to your `POST` request:
+Within the artifact, you can specify whether you want to provide local data or remote data from an
+external API. For local data, you would have to add the following body to your `POST` request:
 
 ```json
 {
@@ -239,6 +239,12 @@ and `password` to define details for the data providing connector on how to retr
 connected backend systems or existing APIs. You do not need to specify whether you added remote or 
 local data. The Dataspace Connector automatically classifies an artifact as `remote` as soon as the 
 `accessUrl` property is filled.
+
+```json
+{
+"accessUrl": "https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02"
+}
+```
 
 Currently, the Dataspace Connector can natively establish a connection via http, https, and https
 with basic authentication. To connect to other backends, take a look at how to integrate 
