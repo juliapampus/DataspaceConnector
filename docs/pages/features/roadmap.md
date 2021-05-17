@@ -54,9 +54,9 @@ Responsible for this are mainly developers from the Fraunhofer ISST.
 |          | Basic Policy Negotiation               | done        |    |
 | Q1/21    | Routing (e.g. Apache Camel)            | in progress | integration via ConfigManager |
 |          | App (Store) Integration                | in progress | integration via ConfigManager |
-|          | Query Broker                           |             | integration via ConfigManager |
-|          | Integration of IDSCP 2.0               |             | postponed to Q2 |
-|          | IDS-LDP Integration                    |             | postponed to Q2 |
+|          | Query Broker                           | in progress | integration via ConfigManager |
+|          | Integration of IDSCP 2.0               | -           | postponed to Q2 |
+|          | IDS-LDP Integration                    | -           | postponed to Q2 |
 |          | Support Query Parameters               | done        |    |
 |          | Basic Clearing House Integration       | in progress | postponed to Q2 |
 | Q2/21    | Usage Control Extension                |             |    |
