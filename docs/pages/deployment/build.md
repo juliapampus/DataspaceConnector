@@ -100,7 +100,7 @@ steps:
 ### Open Telemetry with Jaeger
 
 To view tracing information, another Docker container has to be started:
-```commandline
+```
 docker run -d --name jaeger \
   -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \
   -p 5775:5775/udp \
