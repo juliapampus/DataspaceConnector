@@ -37,15 +37,24 @@ download images, and start or stop pods/containers.
 
 ![Connector Setup](assets/images/dsc_architecture.png)
 
-Wartungsfreundlich, einfach erweiterbar, Kapselung des IDS-Informationsmodells
-The basic communication logic is inside the IDS Framework, whereas the business logic is in focus of the DSC itself.
-Execution core?
-No, It does not contain a message bus/router
-It can be used also without the configuration manager! Which is important for many smaller use cases. That’s also the reason why it is not divided into control and data plane.
-Why is Camel separate?
-Not every use case needs Data Apps
-We wanted to hold the DSC lightweight
-Our idea is that we want to enable different message bus systems, like Apache Airflow, Argo, Kafka,…
+All functionalities and architectural decisions aim at providing a maintainable and easily
+extensible software that encapsulates the IDS information model from connected systems.
+
+The basic communication logic is inside the IDS Framework, whereas the business logic is in focus 
+of the Dataspace Connector itself. 
+
+**Is the Dataspace Connector the Execution Core of an IDS Connector?** 
+
+Referring to the IDS Reference Architecture of a Connector, it can be stated that the Dataspace 
+Connector is not a classic Execution Core. It can be extended by the ConfigManager, but can also be 
+used without it. That is important for many smaller use cases and also the reason why it is e.g. not 
+divided into control and data plane. On top of that, it does not contain a message bus/router
+It can be used also without the configuration manager! 
+
+**Why is Camel separate?**
+
+Not every use case needs Data Apps, so the Dataspace Connector should be designed lightweight.
+The idea is to enable different message bus systems, like Apache Airflow, Argo, Kafka, etc.
 
 ## Network Architecture
 The Connector will support a segmented network. Every running container will be associated to a
