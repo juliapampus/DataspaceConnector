@@ -39,7 +39,7 @@ able to ignore unsupported patterns with setting the boolean at the endpoint
 `application.properties` to `true`. As a data consumer, you are legally bound to concluded
 contract agreements that are technically mapped to IDS usage policies. Therefore, you have to
 ensure, that your backend applications technically enforce the usage policies instead._
-![Unsupported Pattern Settings](assets/images/docs/config-pattern.png)
+![Unsupported Pattern Settings](assets/images/config_pattern.png)
 
 ---
 

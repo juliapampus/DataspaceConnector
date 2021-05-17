@@ -41,15 +41,16 @@ It can only be reached from inside a VPN network. To get your IP address unblock
 * The backend API and its endpoints (`/api/**`) are only accessible to users with admin rights.
 
 ### Connector Communication
-1. When requesting the connector's self-description, the included catalog gives information about
-   available resources. The resource id is essential for requesting an artifact or description.
-2. The open endpoint at `/api/ids/data` expects an `ArtifactRequestMessage` with a known artifact id
-   as `RequestedArtifact` (for requesting data) or a `DescriptionRequestMessage` with a known 
-   element id as `RequestedElement` (for requesting metadata).
-    * If this parameter is not known to the connector, you will receive a `RejectionMessage` as 
-      response.
-    * If the `RequestedElement` is missing at a `DescriptionRequestMessage`, you will receive the
-      connector's self-description.
+When requesting the connector's self-description, the included catalog gives information about 
+available resources. The resource id is essential for requesting an artifact or description.
+
+The open endpoint at `/api/ids/data` expects an `ArtifactRequestMessage` with a known artifact id
+as `RequestedArtifact` (for requesting data) or a `DescriptionRequestMessage` with a known 
+element id as `RequestedElement` (for requesting metadata).
+* If this parameter is not known to the connector, you will receive a `RejectionMessage` as 
+  response.
+* If the `RequestedElement` is missing at a `DescriptionRequestMessage`, you will receive the 
+  connector's self-description.
 
 Possible rejection messages:
 * `RejectionMessage` with `RejectionReason.VERSION_NOT_SUPPORTED` if you are not using 
