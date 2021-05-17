@@ -43,7 +43,7 @@ advance.
 ### Step 1: Request a Connector's Self-description
 
 For sending a `POST` request, two parameters have to be set: the recipient and the requested element.
-As the data consumer needs to access the self-description of a data provider to know its resource 
+As the data consumer needs to access the self-description of a data provider to know all resource 
 offers, the requested element should be empty.
 
 ![Description Request](../../assets/images/swagger_description_request.png)
