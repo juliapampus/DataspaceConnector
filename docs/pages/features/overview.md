@@ -15,12 +15,6 @@ Ensuring developments following the same goal, the project's roadmap and each as
 
 ---
 
-Below, you can find an overview of currently implemented features, which is continuously updated.
-The Dataspace Connector is a Java application following basic Spring Boot functionalities and
-architecture patterns. It supports the IDS Information Model in the latest version by using the 
-corresponding Java library and integrates the IDS Connector Framework for identity and message 
-handling. It provides a REST API for loading, updating, and deleting IDS persisted resources.
-
 The Dataspace Connector uses modern technologies, standards (e.g. RFC 7231, IDS Information Model, 
 IDS Usage Control Language), and best practices (pattern implementation, e.g. MVC).
 Software quality is ensured by adhering to and implementing code style guides and logging and 
