@@ -171,106 +171,125 @@ catalog's id extended by `/offers` and the resource's id as part of the list in 
 
 ![Example Offer Catalog](../../assets/images/swagger_example_catalogs_offer.png)
 
-```http request
-
+```
+curl -X 'POST' \
+  'https://localhost:8080/api/catalogs/5ac012e1-ffa5-43b3-af41-9707d2a9137d/offers' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '[
+  "https://localhost:8080/api/offers/ca502fbc-fbeb-4125-bd65-97536647d623"
+]'
 ```
 
-As a resource contains the metadata of a raw data string, it can contain several representations,
-e.g. to describe different data types. By default, each resource must have at least one 
-representation. Further details will be explained in Step 3. A representation can be created by 
-using the endpoint  added to a 
-resource by using the endpoint`POST /admin/api/resources/{resource-id}/representation`. See this example:
+As stated [here](../documentation/data-model.md), **an offered resource is only complete if it 
+contains at least one contract offer and at least one representation with at least one artifact. 
+Otherwise, it will not be listed in the IDS self-description because there is no complete data offer.**
 
-```
+So, next, create a contract and at least one rule, that you add to the contract. The rule is the 
+object, that contains the usage policy string as `value`. Since the IDS Usage Control Language is 
+rather complicated and it is not trivial to manually create a valid policy, endpoints are provided 
+to obtain example policies(`POST //api/examples/policy`) or to validate created and modified strings 
+(`POST /api/examples/validation`).
+
+![Policy Endpoints](../../assets/images/swagger_policy.png)
+
+### Step 2: Add Local Data
+
+So, after we created a resource offer and added it to a catalog and a contract offer, we have to 
+create a representation and link it to the resource offer. Then, we have to create an artifact and 
+link it to the representation.
+
+Within the artifact, you can specify whether you want to provide local data or remote data.
+For local data, you would have to add the following body to your `POST` request:
+
+```json
 {
-  "uuid": "55795317-0aaa-4fe1-b336-b2e26a00597f",
-  "type": "JSON",
-  "byteSize": 101,
-  "name": "Example Representation",
-  "source": {
-    "type": "http-get",
-    "url": "https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=439d4b804bc8187953eb36d2a8c26a02",
-    "username": "",
-    "password": ""
-  }
+  "value": "Hello World"
 }
 ```
 
-The attributes `type`, `byteSize`, and `name` give detailed information about the data source. The
-`source` object contains details for the data providing connector on how to retrieve the data from
-connected backend systems or existing APIs (as Open Weather in the example). Here as well, you can
-set your own representation id.
+Response body:
 
-As for the resources, several endpoints provide CRUD operations for representations.
+````json
+{
+  "creationDate": "2021-05-17T19:40:37.375+0200",
+  "modificationDate": "2021-05-17T19:40:37.375+0200",
+  "remoteId": "genesis",
+  "title": "",
+  "numAccessed": 0,
+  "byteSize": 32,
+  "checkSum": 3110206735,
+  "additional": {},
+  "_links": {
+    "self": {
+      "href": "https://localhost:8080/api/artifacts/911a0451-f93f-4850-9dc7-e1a70060b2d1"
+    },
+    "data": {
+      "href": "https://localhost:8080/api/artifacts/911a0451-f93f-4850-9dc7-e1a70060b2d1/data"
+    },
+    "representations": {
+      "href": "https://localhost:8080/api/artifacts/911a0451-f93f-4850-9dc7-e1a70060b2d1/representations{?page,size,sort}",
+      "templated": true
+    },
+    "agreements": {
+      "href": "https://localhost:8080/api/artifacts/911a0451-f93f-4850-9dc7-e1a70060b2d1/agreements{?page,size,sort}",
+      "templated": true
+    }
+  }
+}
+````
 
-![Resource Handling Endpoints](images/api-v1/endpoints-metadata-handling.png)
+In this case, the data will be stored within and loaded from the internal database.
 
-Further endpoints as `PUT` and `GET` `/contract` can be used to add and update the usage policy of
-a resource without having to update the whole metadata model.
+---
 
-A resource must have at least one policy. By default, a `PROVIDE_ACCESS` pattern is added on each
-created resource.
+**Note**: The Dataspace Connector automatically calculates the bytesize and checksum.
 
-> **Note**: Since the IDS policy language is rather complicated and it is not trivial to create a
-> valid policy by hand, endpoints are provided to obtain example policies
-> (`POST /admin/api/example/usage-policy`) or to validate created strings (`POST /admin/api/example/policy-validation`).
->
-> ![Policy Endpoints](images/api-v1/endpoints-example-policy.png)
+---
 
+### Step 3: Add Remote Data
 
-### Step 2: Add Data to the Internal Database
+For remote data, as in this example, it is possible to set the attributes `accessUrl`,`username`, 
+and `password` to define details for the data providing connector on how to retrieve the data from
+connected backend systems or existing APIs. You do not need to specify whether you added remote or 
+local data. The Dataspace Connector automatically classifies an artifact as `remote` as soon as the 
+`accessUrl`property is filled.
 
-For adding plain data to the registered resource, take the returned uuid and upload a string with
-`PUT /{resource-id}/data`. With `GET`, the same endpoint can be used to request the data.
-> **Note**: With source type `local`, always the first representation will be loaded.
-
-The endpoint `/{resource-id}/{representation-id}/data` can be used to request a specific representation of a resource, if multiple have been created.
-
-![Backend Data Handling Endpoints](images/api-v1/endpoints-data-handling.png)
-
-### Step 3: Add Data from an External Database
-
-To distinguish between internally and externally linked data, the resource representation provides
-the property `source` and its attribute `type`. Based on the `type`, the connector knows how to
-retrieve the data string on a data request. If it is set to `local`, the data will be loaded from
-the internal database. Currently, the connector can further establish a connection with `http-get`,
-`https-get`, and `https-get` with basic authentication. To setup `url`, `username`, and `password`,
-the `source` class provides appropriate attributes.
+Currently, the Dataspace Connector can natively establish a connection via http, https, and https
+with basic authentication. To connector to other backends, take a look at how to integrate 
+routing frameworks as explained [here](../deployment/camel.md).
 
 In case an external REST API should be connected and this API usually expects query parameters from
-the user, e.g. to retrieve the raw data in various formats, multiple representations can be created
-for one resource. Each representation can then be connected to one specified http request or
-database query with fix parameters. For this purpose, the connector provides CRUD operations for
-`/representation`, which essentially correspond to those of a resource.
+the user, e.g. to retrieve the raw data in various formats, multiple artifacts can be created
+for one representation, or multiple artifacts with one representation each. Each artifact can then 
+refer to one specified http request or database query with fix parameters. 
 
-> **Note**: While the connector has the ability to store data resources internally, it never
-> duplicates data connected by external systems into its internal memory. Instead, the data is only
-> forwarded when a request is received. In addition, the backend connection credentials are never
-> passed on to another connector, but are only used for internal data handling.
+---
 
-> **Note**: To build up a connection to a custom database endpoint, e.g. without using http REST,
-> an interface for another source typ can be implemented and the method
-> `OfferedResourceService.getDataString()` and linked methods edited accordingly.
+**Note**: While the connector has the ability to store data internally, it never duplicates data 
+connected by external systems into its internal memory. Instead, the data is only forwarded when a 
+request is received. In addition, the backend connection credentials are never passed on to another 
+connector, but are only used for internal data handling.
 
-### Step 4: Publish Resources at IDS Metadata Broker (optional)
+---
+
+### Step 4: Publish Resources at IDS Broker (optional)
 
 For communicating with an IDS metadata broker, some endpoints are provided.
-- `/broker/register` and `/broker/update`: send a `ConnectorUpdateMessage` with the connector's
+- `POST /api/ids/connector/update`: send a `ConnectorUpdateMessage` with the connector's
   self-description as `payload`
-- `/broker/unregister`: send a `ConnectorUnavailableMessage` to unregister the connector
-- `/broker/update/{resource-id}`: update a previously registered resource
-- `/broker/remove/{resource-id}`: remove a previously registered resource
-- `/broker/query`: send a `QueryMessage` with a SPARQL command (request parameter) as `payload`
-
-![Broker Communication Endpoints](images/api-v1/endpoints-broker-communication.png)
+- `POST /api/ids/connector/unavailable`: send a `ConnectorUnavailableMessage` to unregister the connector
+- `POST /api/ids/resource/update`: update a previously created resource offer
+- `POST /api/ids/resource/unavailable`: remove a previously registered resource offer
+- `POST /api/ids/query`: send a `QueryMessage` with a SPARQL command (request parameter) as `payload`
 
 ## Policy Enforcement
 
 When the data provider receives an `ArtifactRequestMessage` from an external Connector, the
-`ArtifactMessageHandler` checks the pattern of the policy that was added to the requested resource.
-If the pattern matches one of the following five, an appropriate policy check is performed:
-`PROVIDE_ACCESS`, `PROHIBIT_ACCESS`, `USAGE_DURING_INTERVAL`, `USAGE_UNTIL_DELETION`, or
-`CONNECTOR_RESTRICTED_USAGE`.
+`ArtifactMessageHandler` iterates through all contracts of a resource offer and all of its rules
+to check the policy pattern. If the pattern matches one of the following five, an appropriate policy 
+check is performed:`PROVIDE_ACCESS`, `PROHIBIT_ACCESS`, `USAGE_DURING_INTERVAL`, 
+`USAGE_UNTIL_DELETION`, or`CONNECTOR_RESTRICTED_USAGE`.
 
 Depending on the specified rules, the access permission will be set to true or false. If it is true,
 the data provider returns the data. If not, it will respond with a `RejectionReason.NOT_AUTHORIZED`.
@@ -283,3 +302,10 @@ the data provider returns the data. If not, it will respond with a `RejectionRea
 ---
 
 ## Resource Updates
+
+Currently, a data consumer cannot subscribe to a resource, and the Dataspace Connector as a data 
+provider does not automatically send `ResourceUpdateMessages` to every data consumer on metadata
+changes. Instead, the data provider has to automatically trigger update messages by using the 
+respective endpoint.
+
+![Resource Update](../../assets/images/swagger_resource_updates.png)
